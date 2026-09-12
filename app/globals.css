@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: #0b1220;
+  color: #e5e9f0;
+  font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
