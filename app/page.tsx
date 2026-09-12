@@ -111,6 +111,30 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section style={{ padding: "40px 0 80px", textAlign: "center" }}>
+        <div className="container">
+          <h2 style={{ fontSize: 24, marginBottom: 16 }}>Связаться</h2>
+          <p style={{ opacity: 0.75, marginBottom: 20 }}>
+            Самозанятый, работаю официально. Открыт к небольшим и средним
+            задачам по сайтам и автоматизации.
+          </p>
+          <a
+            href="https://t.me/AVBalashov"
+            style={{
+              display: "inline-block",
+              background: "#2aabee",
+              color: "#fff",
+              padding: "12px 28px",
+              borderRadius: 24,
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
+          >
+            Написать в Telegram
+          </a>
+        </div>
+      </section>
     </main>
   );
 }
