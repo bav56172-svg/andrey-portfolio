@@ -1,3 +1,14 @@
+const skills = [
+  "Веб-разработка",
+  "Frontend (React, Next.js)",
+  "Backend (Node.js)",
+  "Базы данных (PostgreSQL)",
+  "AI-агенты и автоматизация",
+  "Telegram-боты",
+  "Багфиксы и доработка сайтов",
+  "Лендинги и одностраничники",
+];
+
 export default function Home() {
   return (
     <main>
@@ -14,6 +25,28 @@ export default function Home() {
             веду несколько реальных проектов, часть из них ещё в разработке.
             Делаю сайты, лендинги, Telegram-боты и AI-агентов.
           </p>
+        </div>
+      </section>
+
+      <section style={{ padding: "40px 0" }}>
+        <div className="container">
+          <h2 style={{ fontSize: 24, marginBottom: 20 }}>Навыки</h2>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+            {skills.map((s) => (
+              <span
+                key={s}
+                style={{
+                  background: "#151d2e",
+                  border: "1px solid #263149",
+                  borderRadius: 20,
+                  padding: "8px 16px",
+                  fontSize: 14,
+                }}
+              >
+                {s}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
     </main>
