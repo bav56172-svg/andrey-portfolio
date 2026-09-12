@@ -9,6 +9,30 @@ const skills = [
   "Лендинги и одностраничники",
 ];
 
+const projects = [
+  {
+    title: "SPES76",
+    description:
+      "Цифровая платформа для рынка услуг спецтехники: каталог, заявки, личные кабинеты компаний.",
+    stack: "Next.js, TypeScript, PostgreSQL",
+    status: "В разработке (MVP)",
+  },
+  {
+    title: "ЕЦУЭПО",
+    description:
+      "Цифровая экосистема для внутренних процессов подразделения охраны.",
+    stack: "Next.js, TypeScript",
+    status: "В разработке",
+  },
+  {
+    title: "Bacey",
+    description:
+      "Персональный AI-агент: Telegram-бот с долгосрочной памятью, распознаванием голоса и фото, интеграцией с почтой и календарём.",
+    stack: "Node.js, Telegram Bot API, Claude API",
+    status: "В работе, боевая эксплуатация",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -45,6 +69,44 @@ export default function Home() {
               >
                 {s}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "40px 0" }}>
+        <div className="container">
+          <h2 style={{ fontSize: 24, marginBottom: 20 }}>Проекты</h2>
+          <div style={{ display: "grid", gap: 16 }}>
+            {projects.map((p) => (
+              <div
+                key={p.title}
+                style={{
+                  background: "#111827",
+                  border: "1px solid #263149",
+                  borderRadius: 12,
+                  padding: 20,
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "baseline",
+                    flexWrap: "wrap",
+                    gap: 8,
+                  }}
+                >
+                  <h3 style={{ fontSize: 18 }}>{p.title}</h3>
+                  <span style={{ fontSize: 12, opacity: 0.6 }}>
+                    {p.status}
+                  </span>
+                </div>
+                <p style={{ opacity: 0.75, margin: "8px 0" }}>
+                  {p.description}
+                </p>
+                <p style={{ fontSize: 13, opacity: 0.5 }}>{p.stack}</p>
+              </div>
             ))}
           </div>
         </div>
