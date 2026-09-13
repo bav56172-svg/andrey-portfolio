@@ -120,7 +120,7 @@ export default function Home() {
             задачам по сайтам и автоматизации.
           </p>
           <a
-            href="https://t.me/AVBalashov"
+            href="https://t.me/AVBallashov"
             style={{
               display: "inline-block",
               background: "#2aabee",
