@@ -150,8 +150,8 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  objectPosition: "center center",
-                  transform: "scale(1.8)",
+                  objectPosition: "center 35%",
+                  transform: "scale(1.65)",
                   display: "block",
                   filter: "contrast(1.18) saturate(1.1) brightness(1.03)",
                 }}
@@ -160,8 +160,8 @@ export default function Home() {
             <div
               style={{
                 position: "absolute",
-                bottom: 6,
-                right: 6,
+                bottom: -6,
+                right: -18,
                 background: "var(--ink)",
                 color: "var(--lime)",
                 fontSize: 12,
@@ -169,6 +169,7 @@ export default function Home() {
                 borderRadius: 999,
                 border: "3px solid var(--paper)",
                 whiteSpace: "nowrap",
+                zIndex: 2,
               }}
             >
               agent.status = online
