@@ -32,7 +32,7 @@ const projects = [
     title: "B.A.C.E.Y",
     tagline: "Boundless Autonomous Cognitive Engine, Yours",
     description:
-      "Автономный AI-агент полного цикла — не просто ассистент по календарю. Ведёт несколько проектов параллельно, пишет и деплоит код, настраивает инфраструктуру и CI/CD, генерирует дизайн и изображения, управляет бизнес-профилями на биржах фриланса, сам находит и чинит сетевые/DNS-проблемы. Telegram-бот с долгосрочной памятью, голосом и фото — только один из интерфейсов.",
+      "Полноценный автономный AI-агент с долговременной памятью, работающий в непрерывном цикле: ведёт несколько проектов параллельно, пишет и деплоит код, настраивает инфраструктуру и CI/CD, генерирует дизайн и изображения, автоматизирует бизнес-процессы, сам находит и чинит сетевые проблемы. Telegram, голос, фото — просто интерфейсы поверх этого.",
     stack: "Node.js · Telegram Bot API · Claude API",
     status: "В работе, боевая эксплуатация",
     tone: "live" as const,
@@ -150,8 +150,8 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  objectPosition: "center 22%",
-                  transform: "scale(1.55)",
+                  objectPosition: "center center",
+                  transform: "scale(1.8)",
                   display: "block",
                   filter: "contrast(1.18) saturate(1.1) brightness(1.03)",
                 }}
