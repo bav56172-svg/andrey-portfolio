@@ -1,15 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html,
+:root {
+  --paper: #f8f4ec;
+  --paper-2: #f1ead9;
+  --ink: #14120f;
+  --violet: #5b3df5;
+  --violet-deep: #2f1fb8;
+  --lime: #c6ff3d;
+  --line: rgba(20, 18, 15, 0.16);
+  --serif: "Fraunces", ui-serif, Georgia, serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+html {
+  background: var(--paper);
+}
+
 body {
-  background: #0b1220;
-  color: #e5e9f0;
-  font-family: -apple-system, "Segoe UI", Arial, sans-serif;
-  scroll-behavior: smooth;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -17,7 +35,34 @@ a {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 28px;
+  position: relative;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: riseIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
+
+::selection {
+  background: var(--lime);
+  color: var(--ink);
 }
