@@ -11,6 +11,15 @@ const skills = [
 
 const projects = [
   {
+    title: "B.A.C.E.Y",
+    tagline: "Boundless Autonomous Cognitive Engine, Yours",
+    description:
+      "Полноценный автономный AI-агент с долговременной памятью, работающий в непрерывном цикле: ведёт несколько проектов параллельно, пишет и деплоит код, настраивает инфраструктуру и CI/CD, генерирует дизайн и изображения, автоматизирует бизнес-процессы, сам находит и чинит сетевые проблемы. Telegram, голос, фото — просто интерфейсы поверх этого.",
+    stack: "Node.js · Telegram Bot API · Claude API",
+    status: "В работе, боевая эксплуатация",
+    tone: "live" as const,
+  },
+  {
     title: "SPES76",
     tagline: "",
     description:
@@ -27,15 +36,6 @@ const projects = [
     stack: "Next.js · TypeScript",
     status: "В разработке",
     tone: "progress" as const,
-  },
-  {
-    title: "B.A.C.E.Y",
-    tagline: "Boundless Autonomous Cognitive Engine, Yours",
-    description:
-      "Полноценный автономный AI-агент с долговременной памятью, работающий в непрерывном цикле: ведёт несколько проектов параллельно, пишет и деплоит код, настраивает инфраструктуру и CI/CD, генерирует дизайн и изображения, автоматизирует бизнес-процессы, сам находит и чинит сетевые проблемы. Telegram, голос, фото — просто интерфейсы поверх этого.",
-    stack: "Node.js · Telegram Bot API · Claude API",
-    status: "В работе, боевая эксплуатация",
-    tone: "live" as const,
   },
 ];
 
