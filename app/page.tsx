@@ -12,6 +12,7 @@ const skills = [
 const projects = [
   {
     title: "SPES76",
+    tagline: "",
     description:
       "Цифровая платформа для рынка услуг спецтехники: каталог, заявки, личные кабинеты компаний.",
     stack: "Next.js · TypeScript · PostgreSQL",
@@ -20,6 +21,7 @@ const projects = [
   },
   {
     title: "ЕЦУЭПО",
+    tagline: "",
     description:
       "Цифровая экосистема для внутренних процессов подразделения охраны.",
     stack: "Next.js · TypeScript",
@@ -27,7 +29,8 @@ const projects = [
     tone: "progress" as const,
   },
   {
-    title: "Bacey",
+    title: "B.A.C.E.Y",
+    tagline: "Boundless Autonomous Cognitive Engine, Yours",
     description:
       "Персональный AI-агент: Telegram-бот с долгосрочной памятью, распознаванием голоса и фото, интеграцией с почтой и календарём.",
     stack: "Node.js · Telegram Bot API · Claude API",
@@ -70,84 +73,189 @@ export default function Home() {
             zIndex: 0,
           }}
         />
-        <div className="container" style={{ position: "relative", zIndex: 1 }}>
-          <p
-            className="rise"
-            style={{
-              fontSize: 13,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              marginBottom: 22,
-              display: "inline-block",
-              padding: "6px 14px",
-              border: "1px solid var(--ink)",
-              borderRadius: 999,
-            }}
-          >
-            Доступен для новых заказов
-          </p>
-          <h1
-            className="rise"
-            style={{
-              fontFamily: "var(--serif)",
-              fontOpticalSizing: "auto",
-              fontWeight: 600,
-              fontSize: "clamp(48px, 9vw, 104px)",
-              lineHeight: 0.96,
-              letterSpacing: "-0.02em",
-              maxWidth: 780,
-              animationDelay: "0.05s",
-            }}
-          >
-            Андрей
-            <br />
-            Балашов
-          </h1>
-          <p
-            className="rise"
-            style={{
-              marginTop: 26,
-              fontSize: 18,
-              lineHeight: 1.6,
-              maxWidth: 560,
-              animationDelay: "0.15s",
-            }}
-          >
-            Начинающий веб-разработчик и AI-инженер. Учусь через практику —
-            веду несколько реальных проектов, часть из них ещё в разработке.
-            Делаю сайты, лендинги, Telegram-боты и AI-агентов.
-          </p>
+        <div className="container hero-grid" style={{ position: "relative", zIndex: 1 }}>
+          <div>
+            <p
+              className="rise"
+              style={{
+                fontSize: 13,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                marginBottom: 22,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "6px 14px",
+                border: "1px solid var(--ink)",
+                borderRadius: 999,
+              }}
+            >
+              <span
+                aria-hidden
+                style={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: "50%",
+                  background: "var(--lime)",
+                  animation: "pulseDot 2s infinite",
+                }}
+              />
+              status: доступен для заказов
+            </p>
+            <h1
+              className="rise"
+              style={{
+                fontFamily: "var(--serif)",
+                fontOpticalSizing: "auto",
+                fontWeight: 600,
+                fontSize: "clamp(48px, 8vw, 96px)",
+                lineHeight: 0.96,
+                letterSpacing: "-0.02em",
+                animationDelay: "0.05s",
+              }}
+            >
+              Андрей
+              <br />
+              Балашов
+            </h1>
+            <p
+              className="rise"
+              style={{
+                marginTop: 14,
+                fontSize: 13,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                opacity: 0.6,
+                animationDelay: "0.1s",
+              }}
+            >
+              &lt;/&gt; web-разработка + AI-автоматизация
+            </p>
+            <p
+              className="rise"
+              style={{
+                marginTop: 22,
+                fontSize: 18,
+                lineHeight: 1.6,
+                maxWidth: 520,
+                animationDelay: "0.15s",
+              }}
+            >
+              Начинающий веб-разработчик и AI-инженер. Учусь через практику —
+              веду несколько реальных проектов, часть из них ещё в разработке.
+              Делаю сайты, лендинги, Telegram-боты и AI-агентов.
+            </p>
+            <div
+              className="rise"
+              style={{ marginTop: 34, display: "flex", gap: 14, flexWrap: "wrap", animationDelay: "0.25s" }}
+            >
+              <a
+                href="#contact"
+                style={{
+                  background: "var(--ink)",
+                  color: "var(--paper)",
+                  padding: "14px 26px",
+                  borderRadius: 999,
+                  fontSize: 14,
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Обсудить проект →
+              </a>
+              <a
+                href="#work"
+                style={{
+                  padding: "14px 26px",
+                  borderRadius: 999,
+                  fontSize: 14,
+                  border: "1px solid var(--ink)",
+                  textDecoration: "none",
+                }}
+              >
+                Смотреть работы
+              </a>
+            </div>
+          </div>
+
           <div
             className="rise"
-            style={{ marginTop: 34, display: "flex", gap: 14, flexWrap: "wrap", animationDelay: "0.25s" }}
+            style={{ position: "relative", animationDelay: "0.2s", justifySelf: "center" }}
           >
-            <a
-              href="#contact"
+            <div
+              aria-hidden
               style={{
+                position: "absolute",
+                inset: -14,
+                borderRadius: "50%",
+                background:
+                  "conic-gradient(from 0deg, var(--violet), var(--lime), var(--violet))",
+                animation: "spinRing 6s linear infinite",
+              }}
+            />
+            <div
+              style={{
+                position: "relative",
+                width: 240,
+                height: 240,
+                borderRadius: "50%",
+                overflow: "hidden",
+                border: "6px solid var(--paper)",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/andrey-portfolio/avatar.jpg"
+                alt="Андрей Балашов"
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                bottom: -6,
+                right: 6,
                 background: "var(--ink)",
-                color: "var(--paper)",
-                padding: "14px 26px",
+                color: "var(--lime)",
+                fontSize: 11,
+                padding: "6px 12px",
                 borderRadius: 999,
-                fontSize: 14,
-                fontWeight: 500,
-                textDecoration: "none",
-                letterSpacing: "0.02em",
+                border: "3px solid var(--paper)",
+                whiteSpace: "nowrap",
               }}
             >
-              Обсудить проект →
-            </a>
-            <a
-              href="#work"
-              style={{
-                padding: "14px 26px",
-                borderRadius: 999,
-                fontSize: 14,
-                border: "1px solid var(--ink)",
-                textDecoration: "none",
-              }}
-            >
-              Смотреть работы
-            </a>
+              agent.status = online
+            </div>
+          </div>
+        </div>
+
+        <div className="container" style={{ marginTop: 56, position: "relative", zIndex: 1 }}>
+          <div
+            className="rise"
+            style={{
+              maxWidth: 420,
+              animationDelay: "0.3s",
+              background: "var(--ink)",
+              color: "#9cff6b",
+              borderRadius: 10,
+              padding: "16px 18px",
+              fontSize: 13,
+              lineHeight: 1.7,
+              boxShadow: "8px 8px 0 var(--violet)",
+            }}
+          >
+            <div style={{ display: "flex", gap: 6, marginBottom: 10 }}>
+              <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ff5f56" }} />
+              <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#ffbd2e" }} />
+              <span style={{ width: 10, height: 10, borderRadius: "50%", background: "#27c93f" }} />
+            </div>
+            <span style={{ opacity: 0.6 }}>$</span> whoami
+            <br />
+            андрей_балашов · web_dev + ai_automation
+            <br />
+            <span style={{ opacity: 0.6 }}>$</span> npm run life --practice
+            <span style={{ animation: "blink 1s step-end infinite" }}>▌</span>
           </div>
         </div>
       </section>
@@ -208,7 +316,22 @@ export default function Home() {
                 }}
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", flexWrap: "wrap", gap: 10 }}>
-                  <h3 style={{ fontFamily: "var(--serif)", fontSize: 26, fontWeight: 600 }}>{p.title}</h3>
+                  <div>
+                    <h3 style={{ fontFamily: "var(--serif)", fontSize: 26, fontWeight: 600 }}>{p.title}</h3>
+                    {p.tagline && (
+                      <p
+                        style={{
+                          fontSize: 11,
+                          fontStyle: "italic",
+                          opacity: 0.55,
+                          letterSpacing: "0.02em",
+                          marginTop: 2,
+                        }}
+                      >
+                        {p.tagline}
+                      </p>
+                    )}
+                  </div>
                   <span
                     style={{
                       fontSize: 11,
