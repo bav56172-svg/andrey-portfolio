@@ -150,8 +150,8 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  objectPosition: "center 35%",
-                  transform: "scale(1.65)",
+                  objectPosition: "center 83%",
+                  transform: "scale(1.58)",
                   display: "block",
                   filter: "contrast(1.18) saturate(1.1) brightness(1.03)",
                 }}
@@ -160,8 +160,9 @@ export default function Home() {
             <div
               style={{
                 position: "absolute",
-                bottom: -6,
-                right: -18,
+                bottom: 22,
+                left: "50%",
+                transform: "translateX(-50%)",
                 background: "var(--ink)",
                 color: "var(--lime)",
                 fontSize: 12,
