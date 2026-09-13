@@ -43,19 +43,20 @@ export default function Home() {
   return (
     <main>
       {/* ---------- HERO ---------- */}
-      <section style={{ position: "relative", paddingTop: 72, paddingBottom: 88, overflow: "hidden" }}>
+      <section style={{ position: "relative", paddingTop: 64, paddingBottom: 88, overflow: "hidden" }}>
+        {/* Ambient corner glows — kept far from text, heavily blurred so contrast never suffers */}
         <div
           aria-hidden
           style={{
             position: "absolute",
-            top: -120,
-            right: -160,
-            width: 520,
-            height: 520,
+            top: -220,
+            left: -200,
+            width: 480,
+            height: 480,
             background: "var(--violet)",
-            borderRadius: "42% 58% 63% 37% / 41% 44% 56% 59%",
-            filter: "blur(2px)",
-            opacity: 0.9,
+            borderRadius: "50%",
+            filter: "blur(90px)",
+            opacity: 0.35,
             zIndex: 0,
           }}
         />
@@ -63,145 +64,82 @@ export default function Home() {
           aria-hidden
           style={{
             position: "absolute",
-            top: 60,
-            right: -40,
-            width: 140,
-            height: 140,
+            top: -100,
+            right: -240,
+            width: 460,
+            height: 460,
             background: "var(--lime)",
-            borderRadius: "30%",
-            transform: "rotate(18deg)",
+            borderRadius: "50%",
+            filter: "blur(100px)",
+            opacity: 0.4,
             zIndex: 0,
           }}
         />
-        <div className="container hero-grid" style={{ position: "relative", zIndex: 1 }}>
-          <div>
-            <p
-              className="rise"
-              style={{
-                fontSize: 13,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                marginBottom: 22,
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 8,
-                padding: "6px 14px",
-                border: "1px solid var(--ink)",
-                borderRadius: 999,
-              }}
-            >
-              <span
-                aria-hidden
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: "50%",
-                  background: "var(--lime)",
-                  animation: "pulseDot 2s infinite",
-                }}
-              />
-              status: доступен для заказов
-            </p>
-            <h1
-              className="rise"
-              style={{
-                fontFamily: "var(--serif)",
-                fontOpticalSizing: "auto",
-                fontWeight: 600,
-                fontSize: "clamp(48px, 8vw, 96px)",
-                lineHeight: 0.96,
-                letterSpacing: "-0.02em",
-                animationDelay: "0.05s",
-              }}
-            >
-              Андрей
-              <br />
-              Балашов
-            </h1>
-            <p
-              className="rise"
-              style={{
-                marginTop: 14,
-                fontSize: 13,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                opacity: 0.6,
-                animationDelay: "0.1s",
-              }}
-            >
-              &lt;/&gt; web-разработка + AI-автоматизация
-            </p>
-            <p
-              className="rise"
-              style={{
-                marginTop: 22,
-                fontSize: 18,
-                lineHeight: 1.6,
-                maxWidth: 520,
-                animationDelay: "0.15s",
-              }}
-            >
-              Начинающий веб-разработчик и AI-инженер. Учусь через практику —
-              веду несколько реальных проектов, часть из них ещё в разработке.
-              Делаю сайты, лендинги, Telegram-боты и AI-агентов.
-            </p>
-            <div
-              className="rise"
-              style={{ marginTop: 34, display: "flex", gap: 14, flexWrap: "wrap", animationDelay: "0.25s" }}
-            >
-              <a
-                href="#contact"
-                style={{
-                  background: "var(--ink)",
-                  color: "var(--paper)",
-                  padding: "14px 26px",
-                  borderRadius: 999,
-                  fontSize: 14,
-                  fontWeight: 500,
-                  textDecoration: "none",
-                  letterSpacing: "0.02em",
-                }}
-              >
-                Обсудить проект →
-              </a>
-              <a
-                href="#work"
-                style={{
-                  padding: "14px 26px",
-                  borderRadius: 999,
-                  fontSize: 14,
-                  border: "1px solid var(--ink)",
-                  textDecoration: "none",
-                }}
-              >
-                Смотреть работы
-              </a>
-            </div>
-          </div>
+        {/* Floating orbs — small interactive-feeling accents */}
+        {[
+          { top: "18%", left: "8%", size: 10, color: "var(--violet)", delay: "0s" },
+          { top: "68%", left: "12%", size: 14, color: "var(--lime)", delay: "1.2s" },
+          { top: "30%", left: "88%", size: 12, color: "var(--lime)", delay: "0.6s" },
+          { top: "72%", left: "90%", size: 8, color: "var(--violet)", delay: "1.8s" },
+        ].map((o, idx) => (
+          <span
+            key={idx}
+            aria-hidden
+            style={{
+              position: "absolute",
+              top: o.top,
+              left: o.left,
+              width: o.size,
+              height: o.size,
+              borderRadius: "50%",
+              background: o.color,
+              opacity: 0.7,
+              animation: `floatOrb 5s ease-in-out ${o.delay} infinite`,
+              zIndex: 0,
+            }}
+          />
+        ))}
 
+        <div className="container" style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
           <div
             className="rise"
-            style={{ position: "relative", animationDelay: "0.2s", justifySelf: "center" }}
+            style={{
+              position: "relative",
+              width: 300,
+              height: 300,
+              margin: "0 auto 32px",
+              animationDelay: "0.1s",
+            }}
           >
             <div
               aria-hidden
               style={{
                 position: "absolute",
-                inset: -14,
+                inset: -60,
                 borderRadius: "50%",
-                background:
-                  "conic-gradient(from 0deg, var(--violet), var(--lime), var(--violet))",
+                background: "radial-gradient(circle, var(--violet) 0%, transparent 70%)",
+                opacity: 0.45,
+                filter: "blur(10px)",
+              }}
+            />
+            <div
+              aria-hidden
+              style={{
+                position: "absolute",
+                inset: -16,
+                borderRadius: "50%",
+                background: "conic-gradient(from 0deg, var(--violet), var(--lime), var(--violet))",
                 animation: "spinRing 6s linear infinite",
               }}
             />
             <div
               style={{
                 position: "relative",
-                width: 240,
-                height: 240,
+                width: "100%",
+                height: "100%",
                 borderRadius: "50%",
                 overflow: "hidden",
-                border: "6px solid var(--paper)",
+                border: "7px solid var(--paper)",
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -214,12 +152,12 @@ export default function Home() {
             <div
               style={{
                 position: "absolute",
-                bottom: -6,
+                bottom: 6,
                 right: 6,
                 background: "var(--ink)",
                 color: "var(--lime)",
-                fontSize: 11,
-                padding: "6px 12px",
+                fontSize: 12,
+                padding: "7px 14px",
                 borderRadius: 999,
                 border: "3px solid var(--paper)",
                 whiteSpace: "nowrap",
@@ -228,6 +166,117 @@ export default function Home() {
               agent.status = online
             </div>
           </div>
+
+          <p
+            className="rise"
+            style={{
+              fontSize: 13,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              marginBottom: 22,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "6px 14px",
+              border: "1px solid var(--ink)",
+              borderRadius: 999,
+              animationDelay: "0.15s",
+            }}
+          >
+            <span
+              aria-hidden
+              style={{
+                width: 8,
+                height: 8,
+                borderRadius: "50%",
+                background: "var(--lime)",
+                animation: "pulseDot 2s infinite",
+              }}
+            />
+            status: доступен для заказов
+          </p>
+          <h1
+            className="rise"
+            style={{
+              fontFamily: "var(--serif)",
+              fontOpticalSizing: "auto",
+              fontWeight: 600,
+              fontSize: "clamp(48px, 8vw, 92px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.02em",
+              animationDelay: "0.2s",
+            }}
+          >
+            Андрей Балашов
+          </h1>
+          <p
+            className="rise"
+            style={{
+              marginTop: 14,
+              fontSize: 13,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              opacity: 0.6,
+              animationDelay: "0.25s",
+            }}
+          >
+            &lt;/&gt; web-разработка + AI-автоматизация
+          </p>
+          <p
+            className="rise"
+            style={{
+              marginTop: 22,
+              fontSize: 18,
+              lineHeight: 1.6,
+              maxWidth: 560,
+              marginLeft: "auto",
+              marginRight: "auto",
+              animationDelay: "0.3s",
+            }}
+          >
+            Начинающий веб-разработчик и AI-инженер. Учусь через практику —
+            веду несколько реальных проектов, часть из них ещё в разработке.
+            Делаю сайты, лендинги, Telegram-боты и AI-агентов.
+          </p>
+          <div
+            className="rise"
+            style={{
+              marginTop: 34,
+              display: "flex",
+              gap: 14,
+              flexWrap: "wrap",
+              justifyContent: "center",
+              animationDelay: "0.35s",
+            }}
+          >
+            <a
+              href="#contact"
+              style={{
+                background: "var(--ink)",
+                color: "var(--paper)",
+                padding: "14px 26px",
+                borderRadius: 999,
+                fontSize: 14,
+                fontWeight: 500,
+                textDecoration: "none",
+                letterSpacing: "0.02em",
+              }}
+            >
+              Обсудить проект →
+            </a>
+            <a
+              href="#work"
+              style={{
+                padding: "14px 26px",
+                borderRadius: 999,
+                fontSize: 14,
+                border: "1px solid var(--ink)",
+                textDecoration: "none",
+              }}
+            >
+              Смотреть работы
+            </a>
+          </div>
         </div>
 
         <div className="container" style={{ marginTop: 56, position: "relative", zIndex: 1 }}>
@@ -235,7 +284,9 @@ export default function Home() {
             className="rise"
             style={{
               maxWidth: 420,
-              animationDelay: "0.3s",
+              margin: "0 auto",
+              textAlign: "left",
+              animationDelay: "0.4s",
               background: "var(--ink)",
               color: "#9cff6b",
               borderRadius: 10,

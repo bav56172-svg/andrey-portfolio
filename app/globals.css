@@ -47,6 +47,18 @@ body {
   50% { opacity: 0; }
 }
 
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-14px) translateX(6px); }
+  66% { transform: translateY(8px) translateX(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="floatOrb"], [style*="spinRing"], [style*="pulseDot"] {
+    animation: none !important;
+  }
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.3fr 0.9fr;
