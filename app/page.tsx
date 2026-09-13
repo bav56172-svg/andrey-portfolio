@@ -32,7 +32,7 @@ const projects = [
     title: "B.A.C.E.Y",
     tagline: "Boundless Autonomous Cognitive Engine, Yours",
     description:
-      "Персональный AI-агент: Telegram-бот с долгосрочной памятью, распознаванием голоса и фото, интеграцией с почтой и календарём.",
+      "Автономный AI-агент полного цикла — не просто ассистент по календарю. Ведёт несколько проектов параллельно, пишет и деплоит код, настраивает инфраструктуру и CI/CD, генерирует дизайн и изображения, управляет бизнес-профилями на биржах фриланса, сам находит и чинит сетевые/DNS-проблемы. Telegram-бот с долгосрочной памятью, голосом и фото — только один из интерфейсов.",
     stack: "Node.js · Telegram Bot API · Claude API",
     status: "В работе, боевая эксплуатация",
     tone: "live" as const,
@@ -146,7 +146,15 @@ export default function Home() {
               <img
                 src="/andrey-portfolio/avatar.jpg"
                 alt="Андрей Балашов"
-                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center 22%",
+                  transform: "scale(1.55)",
+                  display: "block",
+                  filter: "contrast(1.18) saturate(1.1) brightness(1.03)",
+                }}
               />
             </div>
             <div
