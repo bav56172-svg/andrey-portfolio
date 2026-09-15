@@ -37,7 +37,7 @@ In review
 - [x] Touch targets, keyboard flow, focus и reduced-motion CSS проверены; 320 px подтверждает reflow-прокси для 400% zoom на 1280 px.
 - [x] Viewport 320/375/768/1024/1440 и 812×375 landscape проверены без переполнения.
 - [x] `npm audit --audit-level=low` сообщает 0 уязвимостей.
-- [ ] Ветка отправлена, PR создан, review и GitHub quality check завершены.
+- [x] Ветка отправлена, PR #6 создан, пятиосевой review и GitHub quality check завершены успешно.
 - [ ] После merge Pages переведён на workflow source, deploy успешен, production проверен.
 
 ## План отката
