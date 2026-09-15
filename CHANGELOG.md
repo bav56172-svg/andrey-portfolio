@@ -19,6 +19,7 @@
 - `PORTFOLIO-EP-004`: проектные карточки со структурой задачи, решения, вклада, стека и статуса.
 - Проверенная публичная ссылка на репозиторий `spec76-core`.
 - `PORTFOLIO-EP-005`: процесс работы, инженерный подход, расширенный контакт и footer-навигация.
+- `PORTFOLIO-EP-006`: canonical и social metadata, sitemap, robots, favicon и воспроизводимая проверка static export.
 
 ### Changed
 
@@ -27,6 +28,8 @@
 - GitHub workflows используют Node 24-compatible `checkout` и `setup-node` actions.
 - Metadata больше не представляет автора как начинающего разработчика.
 - Название ЕЦЭУПО приведено к каноническому написанию.
+- Шрифты self-hosted через `next/font`; браузер больше не обращается к Google Fonts.
+- GitHub Pages deployment actions обновлены до актуальных major-релизов.
 
 ### Known issues
 

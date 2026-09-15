@@ -8,8 +8,8 @@ Portfolio v2 реализуется небольшими проверяемым�
 | [PORTFOLIO-EP-002](PORTFOLIO-EP-002.md) | Фундамент: зависимости, quality gates и дизайн-система      | Merged    |
 | [PORTFOLIO-EP-003](PORTFOLIO-EP-003.md) | Hero, навигация и услуги                                    | Merged    |
 | [PORTFOLIO-EP-004](PORTFOLIO-EP-004.md) | Проекты как доказательные кейсы                             | Merged    |
-| [PORTFOLIO-EP-005](PORTFOLIO-EP-005.md) | Процесс, об исполнителе, контакт и footer                   | In review |
-| PORTFOLIO-EP-006                        | Адаптивность, accessibility, performance и release          | Planned   |
+| [PORTFOLIO-EP-005](PORTFOLIO-EP-005.md) | Процесс, об исполнителе, контакт и footer                   | Merged    |
+| [PORTFOLIO-EP-006](PORTFOLIO-EP-006.md) | Адаптивность, accessibility, performance и release          | In review |
 
 ## Жизненный цикл пакета
 
