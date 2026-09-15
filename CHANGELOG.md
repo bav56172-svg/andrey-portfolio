@@ -11,8 +11,16 @@
 - Реестр Engineering Pack и правила прослеживаемой разработки.
 - ADR-0001 о коммерческом позиционировании и одностраничной структуре.
 - README с запуском, проверками и навигацией по документации.
+- `PORTFOLIO-EP-002`: ESLint, TypeScript и production build как единая quality gate.
+- GitHub Actions checks для pull request и `master`.
+- Дизайн-система Portfolio v2 с accessibility и responsive-правилами.
+
+### Changed
+
+- Next.js обновлён с 14.2.35 до 16.3.5, React — с 18.3.1 до 19.3.0.
+- Deploy workflow использует воспроизводимую установку `npm ci`.
+- GitHub workflows используют Node 24-compatible `checkout` и `setup-node` actions.
 
 ### Known issues
 
-- Текущий dependency audit сообщает 1 high и 1 critical уязвимость; безопасная миграция запланирована отдельным пакетом.
 - GitHub Pages настроен на legacy-источник `gh-pages`, но workflow для `master` также успешно выполняет Pages deployment; два пути нужно свести к одному источнику истины.

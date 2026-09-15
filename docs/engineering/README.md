@@ -5,7 +5,7 @@ Portfolio v2 реализуется небольшими проверяемым�
 | ID | Название | Статус |
 | --- | --- | --- |
 | [PORTFOLIO-EP-001](PORTFOLIO-EP-001.md) | Позиционирование, информационная архитектура и документация | In review |
-| PORTFOLIO-EP-002 | Фундамент: зависимости, структура, quality gates и публикация | Planned |
+| [PORTFOLIO-EP-002](PORTFOLIO-EP-002.md) | Фундамент: зависимости, quality gates и дизайн-система | In review |
 | PORTFOLIO-EP-003 | Hero, навигация и услуги | Planned |
 | PORTFOLIO-EP-004 | Проекты как доказательные кейсы | Planned |
 | PORTFOLIO-EP-005 | Процесс, об исполнителе, контакт и footer | Planned |

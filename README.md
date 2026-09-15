@@ -6,7 +6,7 @@
 
 ## Быстрый старт
 
-Требуется Node.js 20.
+Требуется Node.js 20.9 или новее.
 
 ```bash
 npm ci
@@ -21,6 +21,9 @@ npm run dev
 | --- | --- |
 | `npm run dev` | Локальная разработка |
 | `npm run build` | Production-сборка и статический экспорт в `out/` |
+| `npm run lint` | Проверка ESLint и правил Core Web Vitals |
+| `npm run typecheck` | Проверка TypeScript без генерации файлов |
+| `npm run check` | Полная локальная quality gate |
 | `npm audit` | Проверка известных уязвимостей зависимостей |
 
 ## Документация Portfolio v2

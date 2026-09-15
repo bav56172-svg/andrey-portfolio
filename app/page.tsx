@@ -325,7 +325,7 @@ export default function Home() {
       <section style={{ padding: "36px 0 64px", borderTop: "1px solid var(--line)" }}>
         <div className="container">
           <p style={{ fontSize: 12, letterSpacing: "0.16em", textTransform: "uppercase", opacity: 0.6, marginBottom: 18 }}>
-            // Стек и навыки
+            {"// Стек и навыки"}
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {skills.map((s, i) => (
