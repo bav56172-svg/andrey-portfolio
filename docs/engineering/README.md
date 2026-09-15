@@ -2,14 +2,14 @@
 
 Portfolio v2 реализуется небольшими проверяемыми пакетами.
 
-| ID | Название | Статус |
-| --- | --- | --- |
+| ID                                      | Название                                                    | Статус    |
+| --------------------------------------- | ----------------------------------------------------------- | --------- |
 | [PORTFOLIO-EP-001](PORTFOLIO-EP-001.md) | Позиционирование, информационная архитектура и документация | In review |
-| [PORTFOLIO-EP-002](PORTFOLIO-EP-002.md) | Фундамент: зависимости, quality gates и дизайн-система | In review |
-| PORTFOLIO-EP-003 | Hero, навигация и услуги | Planned |
-| PORTFOLIO-EP-004 | Проекты как доказательные кейсы | Planned |
-| PORTFOLIO-EP-005 | Процесс, об исполнителе, контакт и footer | Planned |
-| PORTFOLIO-EP-006 | Адаптивность, accessibility, performance и release | Planned |
+| [PORTFOLIO-EP-002](PORTFOLIO-EP-002.md) | Фундамент: зависимости, quality gates и дизайн-система      | In review |
+| [PORTFOLIO-EP-003](PORTFOLIO-EP-003.md) | Hero, навигация и услуги                                    | In review |
+| PORTFOLIO-EP-004                        | Проекты как доказательные кейсы                             | Planned   |
+| PORTFOLIO-EP-005                        | Процесс, об исполнителе, контакт и footer                   | Planned   |
+| PORTFOLIO-EP-006                        | Адаптивность, accessibility, performance и release          | Planned   |
 
 ## Жизненный цикл пакета
 
