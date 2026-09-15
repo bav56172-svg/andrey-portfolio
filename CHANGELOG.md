@@ -16,6 +16,8 @@
 - Дизайн-система Portfolio v2 с accessibility и responsive-правилами.
 - `PORTFOLIO-EP-003`: новый Hero с коммерческим позиционированием, навигацией, CTA и блоком услуг.
 - Skip-link, видимые keyboard focus-состояния и reduced-motion режим.
+- `PORTFOLIO-EP-004`: проектные карточки со структурой задачи, решения, вклада, стека и статуса.
+- Проверенная публичная ссылка на репозиторий `spec76-core`.
 
 ### Changed
 
@@ -23,6 +25,7 @@
 - Deploy workflow использует воспроизводимую установку `npm ci`.
 - GitHub workflows используют Node 24-compatible `checkout` и `setup-node` actions.
 - Metadata больше не представляет автора как начинающего разработчика.
+- Название ЕЦЭУПО приведено к каноническому написанию.
 
 ### Known issues
 
