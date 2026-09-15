@@ -69,6 +69,33 @@ const projects = [
   },
 ];
 
+const processSteps = [
+  {
+    number: "01",
+    title: "Задача",
+    description:
+      "Уточняем цель, пользователей, ограничения и критерии готовности.",
+  },
+  {
+    number: "02",
+    title: "Решение",
+    description:
+      "Фиксирую структуру, технический подход, этапы и ожидаемый результат.",
+  },
+  {
+    number: "03",
+    title: "Разработка",
+    description:
+      "Показываю прогресс небольшими проверяемыми итерациями.",
+  },
+  {
+    number: "04",
+    title: "Запуск",
+    description:
+      "Проверяю сборку, адаптивность и публикацию, передаю результат и документацию.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -87,6 +114,7 @@ export default function Home() {
           <nav className="desktop-nav" aria-label="Основная навигация">
             <a href="#services">Услуги</a>
             <a href="#work">Проекты</a>
+            <a href="#process">Процесс</a>
             <a href="#contact">Контакт</a>
           </nav>
           <a
@@ -273,14 +301,73 @@ export default function Home() {
         </section>
 
         <section
+          className="section process"
+          id="process"
+          aria-labelledby="process-title"
+        >
+          <div className="container">
+            <div className="section-heading">
+              <p className="section-kicker">03 / Процесс</p>
+              <h2 id="process-title">Как строится работа</h2>
+              <p>
+                Понятный маршрут от первой формулировки задачи до проверенной
+                публикации.
+              </p>
+            </div>
+            <ol className="process-grid">
+              {processSteps.map((step) => (
+                <li className="process-step" key={step.number}>
+                  <span className="process-number" aria-hidden="true">
+                    {step.number}
+                  </span>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section
+          className="section about"
+          id="about"
+          aria-labelledby="about-title"
+        >
+          <div className="container about-grid">
+            <div>
+              <p className="section-kicker">04 / Об исполнителе</p>
+              <h2 id="about-title">Инженерный подход</h2>
+            </div>
+            <div className="about-copy">
+              <p>
+                Соединяю продуктовую структуру, интерфейс и разработку. Фиксирую
+                решения, веду изменения небольшими пакетами и проверяю результат
+                после каждого этапа — от исходного кода до опубликованной версии.
+              </p>
+              <a
+                href="https://github.com/bav56172-svg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Профиль на GitHub <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section
           className="contact-strip"
           id="contact"
           aria-labelledby="contact-title"
         >
           <div className="container contact-inner">
             <div>
-              <p className="section-kicker">Есть задача?</p>
-              <h2 id="contact-title">Давайте обсудим.</h2>
+              <p className="section-kicker">05 / Контакт</p>
+              <h2 id="contact-title">Есть задача? Давайте обсудим.</h2>
+              <p className="contact-copy">
+                Коротко опишите проект, текущую ситуацию и желаемый результат. Я
+                отвечу, уточню детали и предложу следующий шаг.
+              </p>
             </div>
             <a
               className="button button-primary"
@@ -296,8 +383,28 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="container footer-inner">
-          <span>© 2026 Андрей Балашов</span>
-          <span>Next.js · TypeScript · GitHub Pages</span>
+          <div>
+            <strong>Андрей Балашов</strong>
+            <span>Веб-разработка и AI-автоматизация</span>
+          </div>
+          <nav aria-label="Дополнительная навигация">
+            <a href="#top">Наверх</a>
+            <a
+              href="https://github.com/bav56172-svg"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://t.me/AVBallashov"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Telegram
+            </a>
+          </nav>
+          <span>© 2026 · Next.js · GitHub Pages</span>
         </div>
       </footer>
     </>
