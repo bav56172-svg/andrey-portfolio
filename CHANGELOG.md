@@ -30,7 +30,4 @@
 - Название ЕЦЭУПО приведено к каноническому написанию.
 - Шрифты self-hosted через `next/font`; браузер больше не обращается к Google Fonts.
 - GitHub Pages deployment actions обновлены до актуальных major-релизов.
-
-### Known issues
-
-- GitHub Pages настроен на legacy-источник `gh-pages`, но workflow для `master` также успешно выполняет Pages deployment; два пути нужно свести к одному источнику истины.
+- GitHub Pages переведён с legacy `gh-pages` на GitHub Actions как единственный источник публикации.
