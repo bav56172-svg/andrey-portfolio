@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Андрей Балашов — веб-разработка и AI-автоматизация",
   description:
-    "Начинающий веб-разработчик и AI-инженер. Сайты, лендинги, Telegram-боты, AI-агенты.",
+    "Сайты, веб-приложения, Telegram-боты и AI-автоматизация для бизнеса на Next.js, React и TypeScript.",
 };
 
 export default function RootLayout({

@@ -14,12 +14,15 @@
 - `PORTFOLIO-EP-002`: ESLint, TypeScript и production build как единая quality gate.
 - GitHub Actions checks для pull request и `master`.
 - Дизайн-система Portfolio v2 с accessibility и responsive-правилами.
+- `PORTFOLIO-EP-003`: новый Hero с коммерческим позиционированием, навигацией, CTA и блоком услуг.
+- Skip-link, видимые keyboard focus-состояния и reduced-motion режим.
 
 ### Changed
 
 - Next.js обновлён с 14.2.35 до 16.3.5, React — с 18.3.1 до 19.3.0.
 - Deploy workflow использует воспроизводимую установку `npm ci`.
 - GitHub workflows используют Node 24-compatible `checkout` и `setup-node` actions.
+- Metadata больше не представляет автора как начинающего разработчика.
 
 ### Known issues
 
