@@ -30,27 +30,42 @@ const services = [
 const projects = [
   {
     title: "B.A.C.E.Y",
-    description:
-      "Автономный AI-агент с долговременной памятью для параллельной работы над проектами, кодом, инфраструктурой и бизнес-процессами.",
+    category: "AI-агент и автоматизация",
+    task: "Собрать в одном рабочем контуре задачи, контекст и выполнение действий по нескольким проектам.",
+    solution:
+      "Автономный AI-агент с долговременной памятью. Telegram, голос и изображения используются как интерфейсы взаимодействия.",
+    contribution:
+      "Архитектура рабочего цикла, интеграции, инфраструктура и последовательное развитие через проверяемые изменения.",
     stack: "Node.js · Telegram Bot API · Claude API",
-    status: "В работе · боевая эксплуатация",
+    status: "Рабочий проект",
     tone: "live",
+    repository: null,
   },
   {
     title: "SPES76",
-    description:
-      "Цифровая платформа для рынка услуг спецтехники: каталог, заявки и личные кабинеты компаний.",
-    stack: "Next.js · TypeScript · PostgreSQL",
+    category: "B2B-веб-платформа",
+    task: "Связать заказчиков и исполнителей на рынке услуг спецтехники в едином цифровом процессе.",
+    solution:
+      "Каталог техники, заявки и предложения, кабинеты компаний и рабочие пространства проектов с задачами и документами.",
+    contribution:
+      "Продуктовая структура, интерфейсы основных ролей и технический фундамент платформы.",
+    stack: "Next.js · TypeScript · Supabase · Stripe",
     status: "MVP в разработке",
     tone: "progress",
+    repository: "https://github.com/bav56172-svg/spec76-core",
   },
   {
-    title: "ЕЦУЭПО",
-    description:
-      "Цифровая экосистема для внутренних процессов подразделения охраны.",
-    stack: "Next.js · TypeScript",
+    title: "ЕЦЭУПО",
+    category: "Корпоративная платформа",
+    task: "Создать единый цифровой контур для внутренних процессов подразделения охраны.",
+    solution:
+      "Долгосрочная экосистема с поэтапной архитектурой, управлением данными и контролируемыми инженерными решениями.",
+    contribution:
+      "Архитектура платформы, декомпозиция на инженерные пакеты и разработка прикладных модулей.",
+    stack: "Веб-платформа · Backend · PostgreSQL",
     status: "В разработке",
     tone: "progress",
+    repository: null,
   },
 ];
 
@@ -208,22 +223,51 @@ export default function Home() {
               {projects.map((project, index) => (
                 <article className="project-card" key={project.title}>
                   <div className="project-meta">
-                    <span>0{index + 1}</span>
+                    <span className="project-index">0{index + 1}</span>
                     <span
                       className={`project-status project-status-${project.tone}`}
                     >
                       {project.status}
                     </span>
                   </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <p className="project-stack">{project.stack}</p>
+                  <div className="project-intro">
+                    <p className="project-category">{project.category}</p>
+                    <h3>{project.title}</h3>
+                    <p className="project-stack">{project.stack}</p>
+                  </div>
+                  <dl className="project-details">
+                    <div>
+                      <dt>Задача</dt>
+                      <dd>{project.task}</dd>
+                    </div>
+                    <div>
+                      <dt>Решение</dt>
+                      <dd>{project.solution}</dd>
+                    </div>
+                    <div>
+                      <dt>Вклад</dt>
+                      <dd>{project.contribution}</dd>
+                    </div>
+                  </dl>
+                  <div className="project-footer">
+                    {project.repository ? (
+                      <a
+                        href={project.repository}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Открыть репозиторий <span aria-hidden="true">↗</span>
+                      </a>
+                    ) : (
+                      <span>Подробности — при обсуждении проекта</span>
+                    )}
+                  </div>
                 </article>
               ))}
             </div>
             <p className="work-note">
-              Расширенные кейсы с задачей, ролью и результатом — следующий
-              Engineering Pack.
+              Публичные ссылки добавляются только там, где материалы не
+              раскрывают закрытые данные проекта.
             </p>
           </div>
         </section>
