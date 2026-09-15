@@ -2,7 +2,7 @@
 
 ## Статус
 
-In review
+Merged via PR #5
 
 ## Цель
 
