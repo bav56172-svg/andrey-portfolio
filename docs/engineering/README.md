@@ -10,7 +10,7 @@ Portfolio v2 реализуется небольшими проверяемым�
 | [PORTFOLIO-EP-004](PORTFOLIO-EP-004.md) | Проекты как доказательные кейсы                             | Merged    |
 | [PORTFOLIO-EP-005](PORTFOLIO-EP-005.md) | Процесс, об исполнителе, контакт и footer                   | Merged    |
 | [PORTFOLIO-EP-006](PORTFOLIO-EP-006.md) | Адаптивность, accessibility, performance и release          | Released  |
-| [PORTFOLIO-EP-007](PORTFOLIO-EP-007.md) | Архитектура и автоматическая проверка контента               | PR #8      |
+| [PORTFOLIO-EP-007](PORTFOLIO-EP-007.md) | Архитектура и автоматическая проверка контента               | Released   |
 
 ## Жизненный цикл пакета
 
