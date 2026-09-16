@@ -2,7 +2,7 @@
 
 ## Статус
 
-Ready to merge via PR #8
+Released via PR #8
 
 ## Цель
 
@@ -41,7 +41,7 @@ Ready to merge via PR #8
 - [x] Все 51 перенесённое значение присутствует и в local export, и в текущей production-странице.
 - [x] `npm run check` завершается успешно.
 - [x] Ветка отправлена, PR #8 создан, review не выявил замечаний, GitHub quality check завершён успешно.
-- [ ] После merge production повторно проверен.
+- [x] После merge production повторно проверен.
 
 ## TDD evidence
 
@@ -50,3 +50,11 @@ Ready to merge via PR #8
 ## План отката
 
 Обычный revert merge-коммита EP-007 возвращает данные в `app/page.tsx` и удаляет отдельную content quality gate. Публичные тексты и стили откатом не затрагиваются, поскольку пакет не меняет их содержательно.
+
+## Post-release evidence
+
+- Merge commit: `91d4082c0345cb95ae2046e520793fde17fc1cea`.
+- Post-merge Quality checks и Deploy to GitHub Pages завершены успешно.
+- GitHub Pages API сообщает `build_type = workflow`, `status = built`.
+- Production URL, `robots.txt` и `sitemap.xml` отвечают HTTP 200.
+- Все 51 значение из `app/portfolio-content.json` обнаружено в production HTML.
