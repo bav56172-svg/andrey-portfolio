@@ -2,7 +2,7 @@
 
 ## Статус
 
-In review
+Released via PR #6
 
 ## Цель
 
@@ -38,7 +38,7 @@ In review
 - [x] Viewport 320/375/768/1024/1440 и 812×375 landscape проверены без переполнения.
 - [x] `npm audit --audit-level=low` сообщает 0 уязвимостей.
 - [x] Ветка отправлена, PR #6 создан, пятиосевой review и GitHub quality check завершены успешно.
-- [ ] После merge Pages переведён на workflow source, deploy успешен, production проверен.
+- [x] После merge Pages переведён на workflow source, deploy успешен, production проверен.
 
 ## План отката
 
@@ -47,3 +47,11 @@ In review
 ## Среда проверки
 
 Локальный Python Playwright отсутствует и не добавлялся как новая зависимость. Эквивалентная browser-проверка выполнена через управляемый Chromium; production build и static export проверяются отдельным Node.js-скриптом без сторонних пакетов.
+
+## Post-release evidence
+
+- Merge commit: `64672b56e4f397be64ec92f8a26ef3a6f8a3ab65`.
+- GitHub Pages API: `build_type = workflow`, `status = built`.
+- Контрольный rerun deploy workflow завершён успешно с `upload-pages-artifact@v5` и `deploy-pages@v5`.
+- Production URL, `robots.txt` и `sitemap.xml` отвечают HTTP 200.
+- Production HTML содержит canonical, Open Graph, Twitter Card и favicon; внешние Google Fonts отсутствуют.
