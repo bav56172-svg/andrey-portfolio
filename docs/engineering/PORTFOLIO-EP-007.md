@@ -2,7 +2,7 @@
 
 ## Статус
 
-Ready for review
+Ready to merge via PR #8
 
 ## Цель
 
@@ -40,7 +40,7 @@ Ready for review
 - [x] Ошибочные коллекции, номера, статусы и небезопасные URL останавливают проверку.
 - [x] Все 51 перенесённое значение присутствует и в local export, и в текущей production-странице.
 - [x] `npm run check` завершается успешно.
-- [ ] Ветка отправлена, PR создан, CI и review завершены успешно.
+- [x] Ветка отправлена, PR #8 создан, review не выявил замечаний, GitHub quality check завершён успешно.
 - [ ] После merge production повторно проверен.
 
 ## TDD evidence
