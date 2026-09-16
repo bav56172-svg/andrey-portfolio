@@ -1,100 +1,8 @@
 import Image from "next/image";
 
-const services = [
-  {
-    number: "01",
-    title: "Сайты и лендинги",
-    description:
-      "Адаптивные страницы с ясной структурой, быстрой загрузкой и подготовкой к публикации.",
-  },
-  {
-    number: "02",
-    title: "Веб-приложения",
-    description:
-      "Интерфейсы, личные кабинеты, каталоги и внутренние сервисы с базой данных.",
-  },
-  {
-    number: "03",
-    title: "AI и автоматизация",
-    description:
-      "Telegram-боты, AI-агенты, интеграции и автоматизация повторяющихся процессов.",
-  },
-  {
-    number: "04",
-    title: "Доработка проектов",
-    description:
-      "Исправление ошибок, новые функции и улучшение интерфейса существующего сайта.",
-  },
-];
+import { portfolioContent } from "./content";
 
-const projects = [
-  {
-    title: "B.A.C.E.Y",
-    category: "AI-агент и автоматизация",
-    task: "Собрать в одном рабочем контуре задачи, контекст и выполнение действий по нескольким проектам.",
-    solution:
-      "Автономный AI-агент с долговременной памятью. Telegram, голос и изображения используются как интерфейсы взаимодействия.",
-    contribution:
-      "Архитектура рабочего цикла, интеграции, инфраструктура и последовательное развитие через проверяемые изменения.",
-    stack: "Node.js · Telegram Bot API · Claude API",
-    status: "Рабочий проект",
-    tone: "live",
-    repository: null,
-  },
-  {
-    title: "SPES76",
-    category: "B2B-веб-платформа",
-    task: "Связать заказчиков и исполнителей на рынке услуг спецтехники в едином цифровом процессе.",
-    solution:
-      "Каталог техники, заявки и предложения, кабинеты компаний и рабочие пространства проектов с задачами и документами.",
-    contribution:
-      "Продуктовая структура, интерфейсы основных ролей и технический фундамент платформы.",
-    stack: "Next.js · TypeScript · Supabase · Stripe",
-    status: "MVP в разработке",
-    tone: "progress",
-    repository: "https://github.com/bav56172-svg/spec76-core",
-  },
-  {
-    title: "ЕЦЭУПО",
-    category: "Корпоративная платформа",
-    task: "Создать единый цифровой контур для внутренних процессов подразделения охраны.",
-    solution:
-      "Долгосрочная экосистема с поэтапной архитектурой, управлением данными и контролируемыми инженерными решениями.",
-    contribution:
-      "Архитектура платформы, декомпозиция на инженерные пакеты и разработка прикладных модулей.",
-    stack: "Веб-платформа · Backend · PostgreSQL",
-    status: "В разработке",
-    tone: "progress",
-    repository: null,
-  },
-];
-
-const processSteps = [
-  {
-    number: "01",
-    title: "Задача",
-    description:
-      "Уточняем цель, пользователей, ограничения и критерии готовности.",
-  },
-  {
-    number: "02",
-    title: "Решение",
-    description:
-      "Фиксирую структуру, технический подход, этапы и ожидаемый результат.",
-  },
-  {
-    number: "03",
-    title: "Разработка",
-    description:
-      "Показываю прогресс небольшими проверяемыми итерациями.",
-  },
-  {
-    number: "04",
-    title: "Запуск",
-    description:
-      "Проверяю сборку, адаптивность и публикацию, передаю результат и документацию.",
-  },
-];
+const { links, processSteps, projects, services } = portfolioContent;
 
 export default function Home() {
   return (
@@ -119,7 +27,7 @@ export default function Home() {
           </nav>
           <a
             className="header-cta"
-            href="https://t.me/AVBallashov"
+            href={links.telegram}
             target="_blank"
             rel="noreferrer"
           >
@@ -149,7 +57,7 @@ export default function Home() {
               <div className="hero-actions">
                 <a
                   className="button button-primary"
-                  href="https://t.me/AVBallashov"
+                  href={links.telegram}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -345,7 +253,7 @@ export default function Home() {
                 после каждого этапа — от исходного кода до опубликованной версии.
               </p>
               <a
-                href="https://github.com/bav56172-svg"
+                href={links.github}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -371,7 +279,7 @@ export default function Home() {
             </div>
             <a
               className="button button-primary"
-              href="https://t.me/AVBallashov"
+              href={links.telegram}
               target="_blank"
               rel="noreferrer"
             >
@@ -390,14 +298,14 @@ export default function Home() {
           <nav aria-label="Дополнительная навигация">
             <a href="#top">Наверх</a>
             <a
-              href="https://github.com/bav56172-svg"
+              href={links.github}
               target="_blank"
               rel="noreferrer"
             >
               GitHub
             </a>
             <a
-              href="https://t.me/AVBallashov"
+              href={links.telegram}
               target="_blank"
               rel="noreferrer"
             >
