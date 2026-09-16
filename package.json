@@ -11,8 +11,10 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "test:content": "node --test scripts/content-validation.test.mjs",
+    "verify:content": "node scripts/verify-content.mjs",
     "verify:export": "node scripts/verify-export.mjs",
-    "check": "npm run lint && npm run typecheck && npm run build && npm run verify:export"
+    "check": "npm run lint && npm run typecheck && npm run test:content && npm run verify:content && npm run build && npm run verify:export"
   },
   "dependencies": {
     "next": "^16.3.5",
