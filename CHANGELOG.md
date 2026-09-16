@@ -20,6 +20,7 @@
 - Проверенная публичная ссылка на репозиторий `spec76-core`.
 - `PORTFOLIO-EP-005`: процесс работы, инженерный подход, расширенный контакт и footer-навигация.
 - `PORTFOLIO-EP-006`: canonical и social metadata, sitemap, robots, favicon и воспроизводимая проверка static export.
+- `PORTFOLIO-EP-007`: единый источник контента, TypeScript-контракт и автоматическая проверка данных портфолио.
 
 ### Changed
 
@@ -31,3 +32,4 @@
 - Шрифты self-hosted через `next/font`; браузер больше не обращается к Google Fonts.
 - GitHub Pages deployment actions обновлены до актуальных major-релизов.
 - GitHub Pages переведён с legacy `gh-pages` на GitHub Actions как единственный источник публикации.
+- Данные услуг, проектов, этапов и повторяющихся внешних ссылок вынесены из JSX-разметки.
