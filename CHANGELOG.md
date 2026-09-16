@@ -21,6 +21,7 @@
 - `PORTFOLIO-EP-005`: процесс работы, инженерный подход, расширенный контакт и footer-навигация.
 - `PORTFOLIO-EP-006`: canonical и social metadata, sitemap, robots, favicon и воспроизводимая проверка static export.
 - `PORTFOLIO-EP-007`: единый источник контента, TypeScript-контракт и автоматическая проверка данных портфолио.
+- `PORTFOLIO-EP-008`: MAX добавлен как альтернативный канал связи в контактной секции и footer.
 
 ### Changed
 
