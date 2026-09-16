@@ -6,6 +6,7 @@ import { validatePortfolioContent } from "./content-validation.mjs";
 const validContent = {
   links: {
     telegram: "https://t.me/example",
+    max: "https://web.max.ru/123456",
     github: "https://github.com/example",
   },
   services: [
@@ -82,5 +83,15 @@ test("rejects unsafe external URLs", () => {
   assert.throws(
     () => validatePortfolioContent(invalidContent),
     /links\.telegram must be an HTTPS URL/,
+  );
+});
+
+test("rejects an unsafe MAX URL", () => {
+  const invalidContent = structuredClone(validContent);
+  invalidContent.links.max = "javascript:alert(1)";
+
+  assert.throws(
+    () => validatePortfolioContent(invalidContent),
+    /links\.max must be an HTTPS URL/,
   );
 });

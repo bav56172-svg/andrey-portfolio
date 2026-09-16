@@ -58,6 +58,7 @@ export function validatePortfolioContent(content) {
   assertRecord(content, "content");
   assertRecord(content.links, "links");
   assertHttpsUrl(content.links.telegram, "links.telegram");
+  assertHttpsUrl(content.links.max, "links.max");
   assertHttpsUrl(content.links.github, "links.github");
   assertNumberedCollection(content.services, "services");
   assertNumberedCollection(content.processSteps, "processSteps");

@@ -274,17 +274,28 @@ export default function Home() {
               <h2 id="contact-title">Есть задача? Давайте обсудим.</h2>
               <p className="contact-copy">
                 Коротко опишите проект, текущую ситуацию и желаемый результат. Я
-                отвечу, уточню детали и предложу следующий шаг.
+                отвечу, уточню детали и предложу следующий шаг. Выберите удобный
+                мессенджер.
               </p>
             </div>
-            <a
-              className="button button-primary"
-              href={links.telegram}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Написать в Telegram<span aria-hidden="true">↗</span>
-            </a>
+            <div className="contact-actions">
+              <a
+                className="button button-primary"
+                href={links.telegram}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Написать в Telegram<span aria-hidden="true">↗</span>
+              </a>
+              <a
+                className="button button-secondary"
+                href={links.max}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Написать в MAX<span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -310,6 +321,9 @@ export default function Home() {
               rel="noreferrer"
             >
               Telegram
+            </a>
+            <a href={links.max} target="_blank" rel="noreferrer">
+              MAX
             </a>
           </nav>
           <span>© 2026 · Next.js · GitHub Pages</span>
