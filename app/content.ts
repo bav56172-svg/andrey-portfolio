@@ -23,6 +23,7 @@ export interface PortfolioProject {
 export interface PortfolioContent {
   links: {
     telegram: string;
+    max: string;
     github: string;
   };
   services: NumberedContentItem[];

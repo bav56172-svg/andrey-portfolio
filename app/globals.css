@@ -655,6 +655,12 @@ a:focus-visible {
   font-size: 14px;
   line-height: 1.7;
 }
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
 .site-footer {
   padding: 42px 0;
   background: var(--ink);
@@ -793,6 +799,9 @@ a:focus-visible {
   .contact-inner {
     grid-template-columns: 1fr;
   }
+  .contact-actions {
+    justify-content: flex-start;
+  }
   .footer-inner {
     grid-template-columns: 1fr;
   }
@@ -832,6 +841,7 @@ a:focus-visible {
   }
   .hero-actions,
   .hero-actions .button,
+  .contact-actions,
   .contact-inner .button {
     width: 100%;
   }
