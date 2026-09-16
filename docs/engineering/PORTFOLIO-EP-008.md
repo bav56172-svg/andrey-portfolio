@@ -2,7 +2,7 @@
 
 ## Статус
 
-Ready to merge via PR #10
+Released via PR #10
 
 ## Цель
 
@@ -32,7 +32,7 @@ Ready to merge via PR #10
 - [x] Обе CTA доступны с клавиатуры и не создают горизонтальную прокрутку на 320 px.
 - [x] `npm run check` завершается успешно.
 - [x] Ветка отправлена, PR #10 создан, review не выявил замечаний, GitHub quality check завершён успешно.
-- [ ] После merge production повторно проверен.
+- [x] После merge production повторно проверен.
 
 ## TDD evidence
 
@@ -49,3 +49,11 @@ Ready to merge via PR #10
 ## План отката
 
 Обычный revert merge-коммита EP-008 удаляет MAX из источника данных, контактной секции и footer, возвращая прежний Telegram-only сценарий.
+
+## Post-release evidence
+
+- Merge commit: `ff0ee4604a18d235a2d82a7db5b0105334022e1a`.
+- Post-merge Quality checks и Deploy to GitHub Pages завершены успешно.
+- GitHub Pages API сообщает `build_type = workflow`, `status = built`.
+- Production URL отвечает HTTP 200.
+- Production HTML содержит точный MAX URL, CTA «Написать в MAX» и обновлённый контактный текст.
