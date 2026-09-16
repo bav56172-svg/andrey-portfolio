@@ -2,7 +2,7 @@
 
 ## Статус
 
-Ready for review
+Ready to merge via PR #10
 
 ## Цель
 
@@ -31,7 +31,7 @@ Ready for review
 - [x] MAX URL хранится в `app/portfolio-content.json` и проходит HTTPS-валидацию.
 - [x] Обе CTA доступны с клавиатуры и не создают горизонтальную прокрутку на 320 px.
 - [x] `npm run check` завершается успешно.
-- [ ] Ветка отправлена, PR создан, CI и review завершены успешно.
+- [x] Ветка отправлена, PR #10 создан, review не выявил замечаний, GitHub quality check завершён успешно.
 - [ ] После merge production повторно проверен.
 
 ## TDD evidence
