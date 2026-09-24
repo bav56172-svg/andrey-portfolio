@@ -199,6 +199,8 @@ a:focus-visible {
   line-height: 0.94;
   letter-spacing: -0.045em;
   text-wrap: balance;
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
 .hero h1 span {
   display: block;
