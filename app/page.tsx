@@ -25,13 +25,8 @@ export default function Home() {
             <a href="#process">Процесс</a>
             <a href="#contact">Контакт</a>
           </nav>
-          <a
-            className="header-cta"
-            href={links.telegram}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Обсудить проект<span aria-hidden="true">↗</span>
+          <a className="header-cta" href="#contact">
+            Обсудить проект<span aria-hidden="true">↓</span>
           </a>
         </div>
       </header>
@@ -55,13 +50,8 @@ export default function Home() {
                 сервисов с базой данных, Telegram-ботов и AI-интеграций.
               </p>
               <div className="hero-actions">
-                <a
-                  className="button button-primary"
-                  href={links.telegram}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Обсудить проект<span aria-hidden="true">↗</span>
+                <a className="button button-primary" href="#contact">
+                  Обсудить проект<span aria-hidden="true">↓</span>
                 </a>
                 <a className="button button-secondary" href="#work">
                   Посмотреть работы<span aria-hidden="true">↓</span>
