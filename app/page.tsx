@@ -45,9 +45,10 @@ export default function Home() {
                 Веб-разработка <span>и автоматизация</span>
               </h1>
               <p className="hero-lead">
-                Создаю современные сайты, веб-приложения и автоматизацию для
-                бизнеса — от лендинга и доработки существующего проекта до
-                сервисов с базой данных, Telegram-ботов и AI-интеграций.
+                Довожу задачу до результата, который реально работает:
+                показываю прогресс на каждом шаге, не пропадаю на середине
+                проекта и передаю исходный код целиком. От лендинга до
+                сервиса с базой данных, Telegram-ботов и AI-интеграций.
               </p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#contact">
@@ -97,9 +98,9 @@ export default function Home() {
             </div>
           </div>
           <div className="container hero-proof" aria-label="Рабочие принципы">
-            <span>Продуктовая структура</span>
-            <span>Проверяемые итерации</span>
-            <span>Код и документация</span>
+            <span>Прогресс видно на каждом этапе</span>
+            <span>Без пропаж на середине проекта</span>
+            <span>Исходный код передаю полностью</span>
           </div>
         </section>
 
@@ -188,8 +189,10 @@ export default function Home() {
                       >
                         Открыть репозиторий <span aria-hidden="true">↗</span>
                       </a>
+                    ) : project.tone === "live" ? (
+                      <span>Приватный проект — подробности по запросу</span>
                     ) : (
-                      <span>Подробности — при обсуждении проекта</span>
+                      <span>Ссылка появится после релиза</span>
                     )}
                   </div>
                 </article>
