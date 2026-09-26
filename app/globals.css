@@ -839,7 +839,7 @@ a:focus-visible {
     margin-top: 4px;
   }
   .hero h1 {
-    font-size: clamp(30px, 10vw, 44px);
+    font-size: clamp(32px, 11vw, 48px);
   }
   .hero-actions,
   .hero-actions .button,

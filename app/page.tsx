@@ -42,7 +42,7 @@ export default function Home() {
                 Андрей Балашов · доступен для проектов
               </p>
               <h1 id="hero-title">
-                Веб-разработка <span>и AI-<wbr />автоматизация</span>
+                Веб-разработка <span>и автоматизация</span>
               </h1>
               <p className="hero-lead">
                 Создаю современные сайты, веб-приложения и автоматизацию для
@@ -298,7 +298,7 @@ export default function Home() {
         <div className="container footer-inner">
           <div>
             <strong>Андрей Балашов</strong>
-            <span>Веб-разработка и AI-<wbr />автоматизация</span>
+            <span>Веб-разработка и автоматизация</span>
           </div>
           <nav aria-label="Дополнительная навигация">
             <a href="#top">Наверх</a>
