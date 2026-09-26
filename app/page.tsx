@@ -42,7 +42,7 @@ export default function Home() {
                 Андрей Балашов · доступен для проектов
               </p>
               <h1 id="hero-title">
-                Веб-разработка <span>и автоматизация</span>
+                Веб-разработка <span>AI-автоматизация</span>
               </h1>
               <p className="hero-lead">
                 Довожу задачу до результата, который реально работает:
@@ -301,7 +301,7 @@ export default function Home() {
         <div className="container footer-inner">
           <div>
             <strong>Андрей Балашов</strong>
-            <span>Веб-разработка и автоматизация</span>
+            <span>Веб-разработка и AI-автоматизация</span>
           </div>
           <nav aria-label="Дополнительная навигация">
             <a href="#top">Наверх</a>
