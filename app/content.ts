@@ -18,6 +18,7 @@ export interface PortfolioProject {
   status: string;
   tone: ProjectTone;
   repository: string | null;
+  demoUrl?: string;
 }
 
 export interface PortfolioContent {

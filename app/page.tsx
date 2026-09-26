@@ -176,7 +176,11 @@ export default function Home() {
                     </div>
                   </dl>
                   <div className="project-footer">
-                    {project.repository ? (
+                    {project.demoUrl ? (
+                      <a href={project.demoUrl} target="_blank" rel="noreferrer">
+                        Смотреть страницу <span aria-hidden="true">↗</span>
+                      </a>
+                    ) : project.repository ? (
                       <a
                         href={project.repository}
                         target="_blank"
