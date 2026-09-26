@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /andrey-portfolio/
+
+Sitemap: https://bav56172-svg.github.io/andrey-portfolio/sitemap.xml
