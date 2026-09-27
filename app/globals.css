@@ -276,8 +276,8 @@ a:focus-visible {
 }
 .portrait-image {
   object-fit: cover;
-  object-position: center 50%;
-  transform: scale(1);
+  object-position: center 62%;
+  transform: scale(1.12);
   filter: contrast(1.08) saturate(0.96);
 }
 .portrait-orbit {
