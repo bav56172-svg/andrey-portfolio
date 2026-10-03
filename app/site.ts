@@ -8,5 +8,4 @@ export const SITE_DESCRIPTION =
   "Сайты, веб-приложения, Telegram-боты и AI-интеграции — от задачи до рабочего результата. Next.js, React, TypeScript." as const;
 
 // ID счётчика Яндекс.Метрики (metrika.yandex.ru → "Добавить счётчик").
-// Пока пусто — скрипт в layout.tsx ничего не рендерит, пока сюда не впишут число.
-export const YANDEX_METRIKA_ID = "" as const;
+export const YANDEX_METRIKA_ID = "113367747" as const;
