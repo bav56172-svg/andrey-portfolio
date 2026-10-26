@@ -8,6 +8,12 @@ export interface NumberedContentItem {
   description: string;
 }
 
+export interface QuickService extends NumberedContentItem {
+  result: string;
+  timeline: string;
+  formats: string;
+}
+
 export interface PortfolioProject {
   title: string;
   category: string;
@@ -27,6 +33,7 @@ export interface PortfolioContent {
     max: string;
     github: string;
   };
+  quickServices: QuickService[];
   services: NumberedContentItem[];
   projects: PortfolioProject[];
   processSteps: NumberedContentItem[];

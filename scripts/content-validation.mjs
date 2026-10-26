@@ -54,12 +54,49 @@ function assertNumberedCollection(items, path) {
   });
 }
 
+function assertQuickServices(items) {
+  const path = "quickServices";
+
+  if (!Array.isArray(items) || items.length === 0) {
+    throw new TypeError(`${path} must contain at least one item`);
+  }
+
+  const numbers = new Set();
+
+  items.forEach((item, index) => {
+    const itemPath = `${path}[${index}]`;
+    assertRecord(item, itemPath);
+
+    for (const field of [
+      "number",
+      "title",
+      "description",
+      "result",
+      "timeline",
+      "formats",
+    ]) {
+      assertNonEmptyString(item[field], `${itemPath}.${field}`);
+    }
+
+    if (!/^\d{2}$/.test(item.number)) {
+      throw new TypeError(`${itemPath}.number must contain two digits`);
+    }
+
+    if (numbers.has(item.number)) {
+      throw new TypeError(`${path} contains duplicate number ${item.number}`);
+    }
+
+    numbers.add(item.number);
+  });
+}
+
 export function validatePortfolioContent(content) {
   assertRecord(content, "content");
   assertRecord(content.links, "links");
   assertHttpsUrl(content.links.telegram, "links.telegram");
   assertHttpsUrl(content.links.max, "links.max");
   assertHttpsUrl(content.links.github, "links.github");
+  assertQuickServices(content.quickServices);
   assertNumberedCollection(content.services, "services");
   assertNumberedCollection(content.processSteps, "processSteps");
 

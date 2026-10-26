@@ -16,6 +16,16 @@ const validContent = {
       description: "Описание сервиса",
     },
   ],
+  quickServices: [
+    {
+      number: "01",
+      title: "Презентация",
+      description: "Соберу понятную структуру и оформлю слайды.",
+      result: "Редактируемая презентация и PDF",
+      timeline: "От 1 дня",
+      formats: "PowerPoint · Google Slides · PDF",
+    },
+  ],
   projects: [
     {
       title: "Проект",
@@ -63,6 +73,26 @@ test("rejects duplicate sequence numbers", () => {
   assert.throws(
     () => validatePortfolioContent(invalidContent),
     /services contains duplicate number 01/,
+  );
+});
+
+test("rejects an empty quick services collection", () => {
+  const invalidContent = structuredClone(validContent);
+  invalidContent.quickServices = [];
+
+  assert.throws(
+    () => validatePortfolioContent(invalidContent),
+    /quickServices must contain at least one item/,
+  );
+});
+
+test("rejects a quick service without a concrete result", () => {
+  const invalidContent = structuredClone(validContent);
+  invalidContent.quickServices[0].result = "";
+
+  assert.throws(
+    () => validatePortfolioContent(invalidContent),
+    /quickServices\[0\]\.result must be a non-empty string/,
   );
 });
 

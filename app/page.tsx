@@ -2,7 +2,8 @@ import Image from "next/image";
 
 import { portfolioContent } from "./content";
 
-const { links, processSteps, projects, services } = portfolioContent;
+const { links, processSteps, projects, quickServices, services } =
+  portfolioContent;
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
           <a
             className="wordmark"
             href="#top"
-            aria-label="Андрей Балашов — наверх"
+            aria-label="AB. — Андрей Балашов, наверх"
           >
             AB<span className="wordmark-dot">.</span>
           </a>
@@ -54,8 +55,8 @@ export default function Home() {
                 <a className="button button-primary" href="#contact">
                   Обсудить проект<span aria-hidden="true">↓</span>
                 </a>
-                <a className="button button-secondary" href="#work">
-                  Посмотреть работы<span aria-hidden="true">↓</span>
+                <a className="button button-secondary" href="#services">
+                  Выбрать услугу<span aria-hidden="true">↓</span>
                 </a>
               </div>
               <p className="stack-line" aria-label="Основной стек">
@@ -105,17 +106,68 @@ export default function Home() {
         </section>
 
         <section
-          className="section services"
+          className="section quick-services"
           id="services"
           aria-labelledby="services-title"
         >
           <div className="container">
             <div className="section-heading">
-              <p className="section-kicker">01 / Услуги</p>
-              <h2 id="services-title">Чем могу помочь</h2>
+              <p className="section-kicker">01 / Можно заказать сейчас</p>
+              <h2 id="services-title">Небольшие задачи с понятным результатом</h2>
               <p>
-                От понятной посадочной страницы до внутреннего сервиса и
-                AI-интеграции.
+                Сначала уточняю исходные материалы и ограничения. Срок и
+                стоимость подтверждаю до начала работы.
+              </p>
+            </div>
+            <div className="quick-service-grid">
+              {quickServices.map((service) => (
+                <article className="quick-service-card" key={service.number}>
+                  <div className="quick-service-head">
+                    <span className="quick-service-number" aria-hidden="true">
+                      {service.number}
+                    </span>
+                    <p>{service.formats}</p>
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p className="quick-service-description">
+                    {service.description}
+                  </p>
+                  <dl className="quick-service-details">
+                    <div>
+                      <dt>Результат</dt>
+                      <dd>{service.result}</dd>
+                    </div>
+                    <div>
+                      <dt>Срок</dt>
+                      <dd>{service.timeline}</dd>
+                    </div>
+                  </dl>
+                  <a
+                    className="quick-service-link"
+                    href={links.telegram}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Обсудить задачу <span aria-hidden="true">↗</span>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="section services"
+          id="capabilities"
+          aria-labelledby="capabilities-title"
+        >
+          <div className="container">
+            <div className="section-heading">
+              <p className="section-kicker">02 / Направления работы</p>
+              <h2 id="capabilities-title">Когда задача больше одного результата</h2>
+              <p>
+                Проектирование, разработка и развитие цифровых продуктов — от
+                первой структуры до проверенной публикации.
               </p>
             </div>
             <div className="service-grid">
@@ -139,7 +191,7 @@ export default function Home() {
         >
           <div className="container">
             <div className="section-heading section-heading-light">
-              <p className="section-kicker">02 / Избранные проекты</p>
+              <p className="section-kicker">03 / Избранные проекты</p>
               <h2 id="work-title">Проекты и решения</h2>
               <p>
                 Реальные продукты на разных стадиях — с честным статусом и
@@ -212,7 +264,7 @@ export default function Home() {
         >
           <div className="container">
             <div className="section-heading">
-              <p className="section-kicker">03 / Процесс</p>
+              <p className="section-kicker">04 / Процесс</p>
               <h2 id="process-title">Как строится работа</h2>
               <p>
                 Понятный маршрут от первой формулировки задачи до проверенной
@@ -240,7 +292,7 @@ export default function Home() {
         >
           <div className="container about-grid">
             <div>
-              <p className="section-kicker">04 / Об исполнителе</p>
+              <p className="section-kicker">05 / Об исполнителе</p>
               <h2 id="about-title">Инженерный подход</h2>
             </div>
             <div className="about-copy">
@@ -267,7 +319,7 @@ export default function Home() {
         >
           <div className="container contact-inner">
             <div>
-              <p className="section-kicker">05 / Контакт</p>
+              <p className="section-kicker">06 / Контакт</p>
               <h2 id="contact-title">Есть задача? Давайте обсудим.</h2>
               <p className="contact-copy">
                 Коротко опишите проект, текущую ситуацию и желаемый результат. Я
