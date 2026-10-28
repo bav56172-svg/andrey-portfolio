@@ -1,0 +1,74 @@
+.shell {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.card {
+  width: min(100%, 760px);
+  padding: clamp(28px, 6vw, 64px);
+  border: 2px solid var(--ink);
+  border-radius: 32px;
+  background: rgba(248, 244, 236, 0.94);
+  box-shadow: 16px 18px 0 rgba(20, 18, 15, 0.12);
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+  color: var(--violet-deep);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card h1 {
+  max-width: 620px;
+  margin-bottom: 30px;
+  font-family: var(--serif);
+  font-size: clamp(42px, 8vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+.notice {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  border: 2px solid var(--ink);
+  border-radius: 22px;
+  background: var(--lime);
+  line-height: 1.55;
+}
+
+.error {
+  background: #ffd9d0;
+}
+
+.notice button {
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.notice button:disabled {
+  cursor: default;
+  opacity: 0.72;
+}
+
+.rules {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+  padding-left: 20px;
+  color: var(--muted-ink);
+  font-size: 14px;
+  line-height: 1.5;
+}

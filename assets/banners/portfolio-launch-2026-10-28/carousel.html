@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Андрей Балашов — стартовая карусель</title>
+    <style>
+      :root {
+        --paper: #f8f4ec;
+        --paper-2: #f1ead9;
+        --ink: #14120f;
+        --muted: #5d574f;
+        --violet: #5b3df5;
+        --violet-deep: #2f1fb8;
+        --lime: #c6ff3d;
+        --line: rgba(20, 18, 15, 0.2);
+        --serif: Georgia, "Times New Roman", serif;
+        --mono: "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+      }
+
+      * { box-sizing: border-box; }
+
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        margin: 0;
+        overflow: hidden;
+        background: var(--paper);
+      }
+
+      body {
+        color: var(--ink);
+        font-family: var(--mono);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .slide {
+        position: relative;
+        width: 1080px;
+        height: 1080px;
+        padding: 72px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 2px 2px, rgba(20, 18, 15, 0.1) 1.6px, transparent 0) 0 0 / 32px 32px,
+          var(--paper);
+      }
+
+      .slide::before,
+      .slide::after {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(90px);
+        content: "";
+        pointer-events: none;
+      }
+
+      .slide::before {
+        width: 420px;
+        height: 420px;
+        top: -230px;
+        right: -180px;
+        background: var(--violet);
+        opacity: 0.24;
+      }
+
+      .slide::after {
+        width: 360px;
+        height: 360px;
+        bottom: -220px;
+        left: -140px;
+        background: var(--lime);
+        opacity: 0.42;
+      }
+
+      .topline,
+      .footer {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 19px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .brand {
+        font-family: var(--serif);
+        font-size: 34px;
+        letter-spacing: -0.06em;
+        text-transform: none;
+      }
+
+      .brand b { color: var(--violet); }
+
+      .index {
+        display: inline-flex;
+        align-items: center;
+        min-width: 104px;
+        min-height: 48px;
+        justify-content: center;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: rgba(248, 244, 236, 0.7);
+      }
+
+      .content {
+        position: relative;
+        z-index: 2;
+        height: 820px;
+        display: grid;
+        align-content: center;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        max-width: 900px;
+        font-family: var(--serif);
+        font-weight: 650;
+        letter-spacing: -0.048em;
+        line-height: 0.94;
+      }
+
+      h1 { font-size: 106px; }
+      h2 { font-size: 94px; }
+
+      h1 em,
+      h2 em {
+        color: var(--violet-deep);
+        font-weight: 520;
+      }
+
+      .lead {
+        max-width: 790px;
+        margin-top: 34px;
+        color: #39342e;
+        font-size: 27px;
+        line-height: 1.55;
+      }
+
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 38px;
+      }
+
+      .chip {
+        padding: 14px 20px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: var(--paper);
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .chip-accent { background: var(--lime); }
+
+      .footer {
+        position: absolute;
+        right: 72px;
+        bottom: 58px;
+        left: 72px;
+        border-top: 2px solid var(--line);
+        padding-top: 22px;
+        color: var(--muted);
+        font-size: 16px;
+        letter-spacing: 0.04em;
+        text-transform: none;
+      }
+
+      .cover .content {
+        grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.84fr);
+        align-items: center;
+        gap: 42px;
+      }
+
+      .cover h1 {
+        max-width: 530px;
+        font-size: 60px;
+      }
+
+      .cover h1 em { display: block; }
+
+      .portrait-wrap {
+        position: relative;
+        width: 355px;
+        height: 455px;
+        justify-self: end;
+      }
+
+      .portrait {
+        position: absolute;
+        inset: 0;
+        width: 355px;
+        height: 455px;
+        object-fit: cover;
+        object-position: 50% 30%;
+        border: 3px solid var(--ink);
+        border-radius: 180px 180px 28px 28px;
+        filter: saturate(0.88) contrast(1.03);
+      }
+
+      .portrait-tag {
+        position: absolute;
+        right: -18px;
+        bottom: 30px;
+        padding: 15px 20px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: var(--lime);
+        font-size: 17px;
+        font-weight: 800;
+        transform: rotate(-3deg);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 30px;
+        color: var(--muted);
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #4b7100;
+        box-shadow: 0 0 0 7px rgba(75, 113, 0, 0.14);
+      }
+
+      .diagram {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 48px;
+      }
+
+      .diagram-card {
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 24px;
+        border: 2px solid var(--ink);
+        border-radius: 24px;
+        background: rgba(248, 244, 236, 0.86);
+      }
+
+      .diagram-card strong {
+        font-family: var(--serif);
+        font-size: 36px;
+        line-height: 1.08;
+      }
+
+      .diagram-card span {
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .diagram-card.accent {
+        background: var(--violet-deep);
+        color: var(--paper);
+      }
+
+      .diagram-card.accent span { color: rgba(248, 244, 236, 0.78); }
+
+      .flow {
+        display: flex;
+        align-items: stretch;
+        gap: 12px;
+        margin-top: 52px;
+      }
+
+      .flow-item {
+        flex: 1;
+        min-height: 210px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 24px 20px;
+        border: 2px solid var(--ink);
+        border-radius: 22px;
+        background: rgba(248, 244, 236, 0.9);
+      }
+
+      .flow-item b {
+        color: var(--violet-deep);
+        font-family: var(--serif);
+        font-size: 54px;
+      }
+
+      .flow-item strong {
+        font-size: 22px;
+        line-height: 1.25;
+      }
+
+      .arrow {
+        align-self: center;
+        color: var(--violet-deep);
+        font-size: 38px;
+        font-weight: 900;
+      }
+
+      .cta-card {
+        max-width: 920px;
+        padding: 46px;
+        border: 3px solid var(--ink);
+        border-radius: 34px;
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .cta-card h2 {
+        max-width: 760px;
+        color: var(--paper);
+        font-size: 86px;
+      }
+
+      .cta-card em { color: var(--lime); }
+
+      .cta-card .lead { color: rgba(248, 244, 236, 0.8); }
+
+      .url {
+        display: inline-flex;
+        margin-top: 36px;
+        padding: 18px 24px;
+        border-radius: 999px;
+        background: var(--lime);
+        color: var(--ink);
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      .vk {
+        width: 1200px;
+        height: 630px;
+        padding: 50px 62px;
+      }
+
+      html:has(.vk), body:has(.vk) {
+        width: 1200px;
+        height: 630px;
+      }
+
+      .vk .topline { font-size: 15px; }
+      .vk .brand { font-size: 28px; }
+      .vk .index { display: none; }
+      .vk .content {
+        height: 470px;
+        grid-template-columns: 1.25fr 0.75fr;
+        align-items: center;
+        gap: 42px;
+      }
+      .vk h1 { font-size: 72px; }
+      .vk .lead { margin-top: 22px; font-size: 20px; }
+      .vk .portrait-wrap { width: 265px; height: 335px; }
+      .vk .portrait { width: 265px; height: 335px; }
+      .vk .portrait-tag { right: -24px; bottom: 22px; font-size: 14px; }
+      .vk .footer { right: 62px; bottom: 34px; left: 62px; padding-top: 14px; font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <main id="root"></main>
+    <script>
+      const avatar = "../../../public/avatar.jpg";
+      const slide = new URLSearchParams(location.search).get("slide") || "1";
+
+      const shell = (index, body, className = "") => `
+        <article class="slide ${className}">
+          <header class="topline">
+            <span class="brand">AB<b>.</b></span>
+            <span class="index">${index} / 05</span>
+          </header>
+          ${body}
+          <footer class="footer">
+            <span>Андрей Балашов · веб-разработка и AI</span>
+            <span>@bav56172</span>
+          </footer>
+        </article>`;
+
+      const slides = {
+        "1": shell("01", `
+          <section class="content">
+            <div>
+              <p class="eyebrow"><span class="dot"></span> Доступен для проектов</p>
+              <h1>Веб-<br />разработка <em>и AI-<br />автоматизация</em></h1>
+              <p class="lead">Сайты, веб-сервисы и боты с понятным результатом.</p>
+            </div>
+            <div class="portrait-wrap">
+              <img class="portrait" src="${avatar}" alt="" />
+              <span class="portrait-tag">Андрей Балашов</span>
+            </div>
+          </section>`, "cover"),
+        "2": shell("02", `
+          <section class="content">
+            <div>
+              <p class="eyebrow">Направление 01</p>
+              <h2>Сайты <em>и лендинги</em></h2>
+              <p class="lead">От структуры и текста до адаптивной вёрстки, проверки и публикации.</p>
+              <div class="chip-row">
+                <span class="chip chip-accent">Лендинги</span>
+                <span class="chip">Редизайн</span>
+                <span class="chip">Доработки</span>
+                <span class="chip">Запуск</span>
+              </div>
+            </div>
+          </section>`),
+        "3": shell("03", `
+          <section class="content">
+            <div>
+              <p class="eyebrow">Направление 02</p>
+              <h2>Веб-сервисы <em>для реальных процессов</em></h2>
+              <div class="diagram">
+                <div class="diagram-card"><strong>Кабинеты</strong><span>роли и доступы</span></div>
+                <div class="diagram-card accent"><strong>Каталоги</strong><span>данные и поиск</span></div>
+                <div class="diagram-card"><strong>Формы</strong><span>заявки и анкеты</span></div>
+                <div class="diagram-card"><strong>Базы данных</strong><span>хранение и отчёты</span></div>
+              </div>
+            </div>
+          </section>`),
+        "4": shell("04", `
+          <section class="content">
+            <div>
+              <p class="eyebrow">Направление 03</p>
+              <h2>Боты <em>и автоматизация</em></h2>
+              <p class="lead">Убираю повторяющиеся действия и связываю сервисы в один проверяемый сценарий.</p>
+              <div class="flow">
+                <div class="flow-item"><b>01</b><strong>Заявка</strong></div>
+                <span class="arrow">→</span>
+                <div class="flow-item"><b>02</b><strong>Обработка</strong></div>
+                <span class="arrow">→</span>
+                <div class="flow-item"><b>03</b><strong>Результат</strong></div>
+              </div>
+            </div>
+          </section>`),
+        "5": shell("05", `
+          <section class="content">
+            <div class="cta-card">
+              <p class="eyebrow" style="color:rgba(248,244,236,.72)">Проекты · подход · контакты</p>
+              <h2>Посмотрите <em>реальные работы</em></h2>
+              <p class="lead">Есть задача? Напишите — разберём исходную ситуацию и определим следующий шаг.</p>
+              <span class="url">ссылка в профиле ↓</span>
+            </div>
+          </section>`),
+        "vk": `
+          <article class="slide vk cover">
+            <header class="topline"><span class="brand">AB<b>.</b></span><span>Веб-разработка · AI · автоматизация</span></header>
+            <section class="content">
+              <div>
+                <h1>Цифровые решения <em>для бизнеса</em></h1>
+                <p class="lead">Сайты, веб-сервисы, боты и автоматизация повторяющихся процессов.</p>
+              </div>
+              <div class="portrait-wrap">
+                <img class="portrait" src="${avatar}" alt="" />
+                <span class="portrait-tag">Андрей Балашов</span>
+              </div>
+            </section>
+            <footer class="footer"><span>bav56172-svg.github.io/andrey-portfolio/</span><span>Напишите в личные сообщения</span></footer>
+          </article>`
+      };
+
+      document.getElementById("root").innerHTML = slides[slide] || slides["1"];
+    </script>
+  </body>
+</html>

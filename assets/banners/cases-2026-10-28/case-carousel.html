@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Кейсы Андрея Балашова</title>
+    <style>
+      :root {
+        --paper: #f8f4ec;
+        --paper-2: #f1ead9;
+        --ink: #14120f;
+        --muted: #5d574f;
+        --violet: #5b3df5;
+        --violet-deep: #2f1fb8;
+        --lime: #c6ff3d;
+        --line: rgba(20, 18, 15, 0.2);
+        --serif: Georgia, "Times New Roman", serif;
+        --mono: "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+      }
+
+      * { box-sizing: border-box; }
+
+      html,
+      body {
+        width: 1080px;
+        height: 1440px;
+        margin: 0;
+        overflow: hidden;
+        background: var(--paper);
+      }
+
+      body {
+        color: var(--ink);
+        font-family: var(--mono);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .slide {
+        position: relative;
+        width: 1080px;
+        height: 1440px;
+        padding: 78px 76px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 2px 2px, rgba(20, 18, 15, 0.1) 1.6px, transparent 0) 0 0 / 32px 32px,
+          var(--paper);
+      }
+
+      .slide::before,
+      .slide::after {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(100px);
+        content: "";
+        pointer-events: none;
+      }
+
+      .slide::before {
+        width: 430px;
+        height: 430px;
+        top: -230px;
+        right: -170px;
+        background: var(--violet);
+        opacity: 0.22;
+      }
+
+      .slide::after {
+        width: 390px;
+        height: 390px;
+        bottom: -230px;
+        left: -150px;
+        background: var(--lime);
+        opacity: 0.38;
+      }
+
+      .topline,
+      .footer {
+        position: relative;
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .brand {
+        font-family: var(--serif);
+        font-size: 34px;
+        letter-spacing: -0.06em;
+        text-transform: none;
+      }
+
+      .brand b { color: var(--violet); }
+
+      .index {
+        min-width: 108px;
+        padding: 13px 18px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: rgba(248, 244, 236, 0.8);
+        text-align: center;
+      }
+
+      .content {
+        position: relative;
+        z-index: 3;
+        height: 1190px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .footer {
+        position: absolute;
+        right: 76px;
+        bottom: 58px;
+        left: 76px;
+        border-top: 2px solid var(--line);
+        padding-top: 22px;
+        color: var(--muted);
+        font-size: 15px;
+        letter-spacing: 0.03em;
+        text-transform: none;
+      }
+
+      .eyebrow {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 650;
+        letter-spacing: -0.05em;
+        line-height: 0.96;
+      }
+
+      h1 { font-size: 102px; }
+      h2 { font-size: 88px; }
+      h1 em,
+      h2 em { color: var(--violet-deep); font-weight: 520; }
+
+      .lead {
+        max-width: 850px;
+        margin: 36px 0 0;
+        color: #39342e;
+        font-size: 27px;
+        line-height: 1.55;
+      }
+
+      .browser {
+        position: relative;
+        margin-top: 48px;
+        overflow: hidden;
+        border: 3px solid var(--ink);
+        border-radius: 28px;
+        background: var(--ink);
+        box-shadow: 14px 16px 0 rgba(20, 18, 15, 0.13);
+      }
+
+      .browser-bar {
+        height: 54px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 20px;
+        background: var(--ink);
+      }
+
+      .browser-bar i {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--paper);
+        opacity: 0.8;
+      }
+
+      .browser-bar span {
+        margin-left: 10px;
+        color: rgba(248, 244, 236, 0.78);
+        font-size: 14px;
+      }
+
+      .browser img {
+        display: block;
+        width: 100%;
+        height: 535px;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      .problem {
+        margin-top: 54px;
+        padding: 40px;
+        border: 3px solid var(--ink);
+        border-radius: 30px;
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .problem strong {
+        display: block;
+        color: var(--lime);
+        font-family: var(--serif);
+        font-size: 48px;
+        line-height: 1.05;
+      }
+
+      .problem p {
+        margin: 20px 0 0;
+        color: rgba(248, 244, 236, 0.82);
+        font-size: 24px;
+        line-height: 1.5;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        margin-top: 52px;
+      }
+
+      .card {
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+        border: 2px solid var(--ink);
+        border-radius: 26px;
+        background: rgba(248, 244, 236, 0.9);
+      }
+
+      .card.accent {
+        background: var(--violet-deep);
+        color: var(--paper);
+      }
+
+      .card b {
+        font-family: var(--serif);
+        font-size: 39px;
+        line-height: 1.08;
+      }
+
+      .card span {
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.35;
+      }
+
+      .card.accent span { color: rgba(248, 244, 236, 0.75); }
+
+      .flow {
+        display: grid;
+        gap: 18px;
+        margin-top: 48px;
+      }
+
+      .flow-item {
+        display: grid;
+        grid-template-columns: 84px 1fr;
+        align-items: center;
+        gap: 24px;
+        min-height: 142px;
+        padding: 24px 30px;
+        border: 2px solid var(--ink);
+        border-radius: 24px;
+        background: rgba(248, 244, 236, 0.9);
+      }
+
+      .flow-item b {
+        color: var(--violet-deep);
+        font-family: var(--serif);
+        font-size: 56px;
+      }
+
+      .flow-item strong {
+        font-size: 25px;
+        line-height: 1.3;
+      }
+
+      .content.compact-flow h2 { font-size: 78px; }
+
+      .content.compact-flow .flow {
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .content.compact-flow .flow-item {
+        min-height: 112px;
+        padding: 17px 28px;
+      }
+
+      .content.compact-flow .flow-item b { font-size: 50px; }
+      .content.compact-flow .stack { margin-top: 24px; }
+
+      .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 42px;
+      }
+
+      .chip {
+        padding: 15px 20px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: var(--paper);
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .chip-accent { background: var(--lime); }
+
+      .status {
+        margin-top: 48px;
+        padding: 38px 40px;
+        border: 3px solid var(--ink);
+        border-radius: 30px;
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .status-label {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: rgba(248, 244, 236, 0.72);
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .status-label i {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--lime);
+        box-shadow: 0 0 0 7px rgba(198, 255, 61, 0.14);
+      }
+
+      .status h2 {
+        margin-top: 30px;
+        color: var(--paper);
+        font-size: 76px;
+      }
+
+      .status h2 em { color: var(--lime); }
+
+      .status .lead { color: rgba(248, 244, 236, 0.8); }
+
+      .url {
+        display: inline-flex;
+        margin-top: 34px;
+        padding: 17px 22px;
+        border-radius: 999px;
+        background: var(--lime);
+        color: var(--ink);
+        font-size: 19px;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="root"></main>
+    <script>
+      const params = new URLSearchParams(location.search);
+      const project = params.get("case") || "spec76";
+      const slide = params.get("slide") || "1";
+
+      const data = {
+        spec76: {
+          name: "СпецТехника76",
+          url: "spetstehnika76.ru",
+          screenshot: "spec76-site.png",
+          slides: [
+            `<p class="eyebrow">Кейс · веб-платформа и боты</p>
+             <h1>СпецТехника76 — <em>единый цифровой процесс</em></h1>
+             <p class="lead">Региональная платформа, которая связывает заказчиков и исполнителей услуг спецтехники.</p>
+             <div class="browser"><div class="browser-bar"><i></i><i></i><i></i><span>spetstehnika76.ru</span></div><img src="spec76-site.png" alt="" /></div>`,
+            `<p class="eyebrow">01 / Задача</p>
+             <h2>Убрать <em>разрозненные заявки</em> и поиск по контактам</h2>
+             <div class="problem"><strong>Один понятный маршрут</strong><p>Заказчик описывает задачу, выбирает исполнителя и продолжает работу в едином процессе.</p></div>`,
+            `<p class="eyebrow">02 / Решение</p>
+             <h2>Платформа <em>из четырёх частей</em></h2>
+             <div class="grid"><div class="card"><b>Каталог</b><span>техника и услуги</span></div><div class="card accent"><b>Заявки</b><span>задачи заказчиков</span></div><div class="card"><b>Кабинеты</b><span>заказчики и исполнители</span></div><div class="card"><b>Каналы</b><span>Telegram · MAX · VK</span></div></div>`,
+            `<p class="eyebrow">03 / Моя роль</p>
+             <h2>От архитектуры <em>до запуска пилота</em></h2>
+             <div class="flow"><div class="flow-item"><b>01</b><strong>Продуктовая архитектура и интерфейсы</strong></div><div class="flow-item"><b>02</b><strong>Интеграции с мессенджерами</strong></div><div class="flow-item"><b>03</b><strong>Инфраструктура, запуск и развитие</strong></div></div>
+             <div class="stack"><span class="chip chip-accent">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase</span></div>`,
+            `<p class="eyebrow">04 / Результат</p>
+             <div class="status"><span class="status-label"><i></i> Рабочий пилот</span><h2>Платформа <em>запущена</em></h2><p class="lead">Каталог, заявки, кабинеты и публичные каналы работают в едином контуре.</p><span class="url">spetstehnika76.ru ↗</span></div>`
+          ]
+        },
+        rzd: {
+          name: "РЖД-Охрана",
+          url: "ссылка в портфолио",
+          screenshot: "rzd-site.png",
+          slides: [
+            `<p class="eyebrow">Кейс · лендинг и MAX-бот</p>
+             <h1>Приём кандидатов <em>без ручной обработки</em></h1>
+             <p class="lead">Сценарий от формы отклика до готового результата для рекрутера.</p>
+             <div class="browser"><div class="browser-bar"><i></i><i></i><i></i><span>РЖД-Охрана · набор кандидатов</span></div><img src="rzd-site.png" alt="" /></div>`,
+            `<p class="eyebrow">01 / Задача</p>
+             <h2>Собрать данные <em>и проверить кандидата</em></h2>
+             <div class="problem"><strong>Без ручного переноса</strong><p>Кандидат проходит понятный путь, а рекрутер получает структурированный результат.</p></div>`,
+            `<p class="eyebrow">02 / Сценарий</p>
+             <h2>От отклика <em>до результата</em></h2>
+             <div class="flow"><div class="flow-item"><b>01</b><strong>Посадочная страница и форма</strong></div><div class="flow-item"><b>02</b><strong>Анкета в MAX-боте</strong></div><div class="flow-item"><b>03</b><strong>Два автоматических теста</strong></div><div class="flow-item"><b>04</b><strong>Результат рекрутеру</strong></div></div>`,
+            `<p class="eyebrow">03 / Моя роль</p>
+             <h2>Страница, бот <em>и интеграция</em></h2>
+             <div class="grid"><div class="card"><b>Вёрстка</b><span>адаптивная страница</span></div><div class="card accent"><b>Логика</b><span>анкета и тесты</span></div><div class="card"><b>MAX API</b><span>сценарий бота</span></div><div class="card"><b>Запуск</b><span>деплой и сопровождение</span></div></div>
+             <div class="stack"><span class="chip chip-accent">HTML/CSS</span><span class="chip">Node.js</span><span class="chip">MAX Bot API</span></div>`,
+            `<p class="eyebrow">04 / Результат</p>
+             <div class="status"><span class="status-label"><i></i> Рабочая система</span><h2>Принимает <em>кандидатов</em></h2><p class="lead">Результаты сохраняются и передаются рекрутеру без ручной обработки.</p><span class="url">ссылка в портфолио ↓</span></div>`
+          ]
+        }
+      };
+
+      const current = data[project] || data.spec76;
+      const index = Math.max(1, Math.min(5, Number(slide))) - 1;
+
+      document.getElementById("root").innerHTML = `
+        <article class="slide">
+          <header class="topline"><span class="brand">AB<b>.</b></span><span class="index">0${index + 1} / 05</span></header>
+          <section class="content${(project === "spec76" && index === 3) || (project === "rzd" && index === 2) ? " compact-flow" : ""}">${current.slides[index]}</section>
+          <footer class="footer"><span>${current.name} · кейс</span><span>@bav56172</span></footer>
+        </article>`;
+    </script>
+  </body>
+</html>

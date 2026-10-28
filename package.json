@@ -14,7 +14,10 @@
     "test:content": "node --test scripts/content-validation.test.mjs",
     "verify:content": "node scripts/verify-content.mjs",
     "verify:export": "node scripts/verify-export.mjs",
-    "check": "npm run lint && npm run typecheck && npm run test:content && npm run verify:content && npm run build && npm run verify:export"
+    "vk:preview": "node scripts/vk-publish.mjs preview",
+    "vk:publish": "node scripts/vk-publish.mjs publish",
+    "test:vk": "node --test scripts/vk-publish.test.mjs",
+    "check": "npm run lint && npm run typecheck && npm run test:content && npm run test:vk && npm run verify:content && npm run build && npm run verify:export"
   },
   "dependencies": {
     "next": "^16.3.5",
