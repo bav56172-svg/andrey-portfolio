@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/andrey-portfolio/",
-        disallow: "/andrey-portfolio/vk-auth/",
+        disallow: "/andrey-portfolio/vk-auth*",
       },
     ],
     sitemap: `${SITE_URL}sitemap.xml`,
