@@ -64,7 +64,7 @@ async function loadDraft(draftPath) {
   return { ...draft, absolutePath, images };
 }
 
-export async function createApprovalCode(draft, targets) {
+export async function createApprovalCode(draft, targets, textOnly = false) {
   const imageDigests = [];
   for (const image of draft.images) {
     const digest = createHash("sha256").update(await readFile(image.path)).digest("hex");
@@ -78,17 +78,19 @@ export async function createApprovalCode(draft, targets) {
         message: draft.message,
         images: imageDigests,
         targets: targets.map((target) => target.ownerId),
+        textOnly,
       }),
     )
     .digest("hex")
     .slice(0, 12);
 }
 
-function printPreview(draft, targets, approvalCode) {
+function printPreview(draft, targets, approvalCode, textOnly = false) {
   console.log(`\n${draft.title}`);
   console.log(`Цель: ${targets.map((target) => target.label).join(" + ")}`);
   console.log(`Изображения: ${draft.images.length}`);
   for (const image of draft.images) console.log(`- ${image.source} (${image.bytes} байт)`);
+  if (textOnly) console.log("Режим: только текст, изображения не загружаются.");
   console.log("\nТекст:\n");
   console.log(draft.message);
   console.log(`\nКод проверенного черновика: ${approvalCode}`);
@@ -137,16 +139,18 @@ async function uploadPhoto(image, target, accessToken) {
   return `photo${photo.owner_id}_${photo.id}`;
 }
 
-async function publishTarget(draft, target, approvalCode, accessToken) {
+async function publishTarget(draft, target, approvalCode, accessToken, textOnly = false) {
   const attachments = [];
-  for (const image of draft.images) attachments.push(await uploadPhoto(image, target, accessToken));
+  if (!textOnly) {
+    for (const image of draft.images) attachments.push(await uploadPhoto(image, target, accessToken));
+  }
 
   const response = await callVk(
     "wall.post",
     {
       owner_id: String(target.ownerId),
       message: draft.message,
-      attachments: attachments.join(","),
+      ...(attachments.length ? { attachments: attachments.join(",") } : {}),
       guid: `${approvalCode}-${target.key}`,
       ...(target.fromGroup ? { from_group: "1" } : {}),
     },
@@ -175,21 +179,30 @@ async function main() {
 
   const draft = await loadDraft(draftPath);
   const targets = resolveTargets(String(options.target || "profile"));
-  const approvalCode = await createApprovalCode(draft, targets);
+  const textOnly = options["text-only"] === true || options["text-only"] === "true";
+  const approvalCode = await createApprovalCode(draft, targets, textOnly);
 
   if (command === "preview") {
-    printPreview(draft, targets, approvalCode);
+    printPreview(draft, targets, approvalCode, textOnly);
     return;
   }
 
   if (options.approval !== approvalCode) {
     throw new Error("Код подтверждения не совпадает. Сначала повторите preview.");
   }
-  const accessToken = process.env.VK_ACCESS_TOKEN;
+  let accessToken = process.env.VK_ACCESS_TOKEN;
+  if (!accessToken && targets.length === 1 && targets[0].key === "group") {
+    const credentials = JSON.parse(
+      await readFile(resolve(process.cwd(), "var/vk-group-credentials.json"), "utf8"),
+    );
+    accessToken = credentials.access_token;
+  }
   if (!accessToken) throw new Error("Переменная VK_ACCESS_TOKEN не задана.");
 
   const results = [];
-  for (const target of targets) results.push(await publishTarget(draft, target, approvalCode, accessToken));
+  for (const target of targets) {
+    results.push(await publishTarget(draft, target, approvalCode, accessToken, textOnly));
+  }
   const entry = {
     publishedAt: new Date().toISOString(),
     title: draft.title,
