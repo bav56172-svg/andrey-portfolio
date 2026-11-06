@@ -25,6 +25,8 @@
 
 ### Changed
 
+- `PORTFOLIO-EP-009`: уточнены коммерческое позиционирование, иерархия услуг, порядок кейсов и адаптивный заголовок.
+
 - Next.js обновлён с 14.2.35 до 16.3.5, React — с 18.3.1 до 19.3.0.
 - Deploy workflow использует воспроизводимую установку `npm ci`.
 - GitHub workflows используют Node 24-compatible `checkout` и `setup-node` actions.
