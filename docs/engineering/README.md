@@ -13,7 +13,7 @@ Portfolio v2 реализуется небольшими проверяемым�
 | [PORTFOLIO-EP-007](PORTFOLIO-EP-007.md) | Архитектура и автоматическая проверка контента               | Released   |
 | [PORTFOLIO-EP-008](PORTFOLIO-EP-008.md) | Telegram и MAX как резервные каналы связи                    | Released    |
 
-| [PORTFOLIO-EP-009](PORTFOLIO-EP-009.md) | Позиционирование и структура услуг | Ready for review |
+| [PORTFOLIO-EP-009](PORTFOLIO-EP-009.md) | Позиционирование и структура услуг | Completed |
 
 ## Жизненный цикл пакета
 
